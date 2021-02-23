@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第三天</title>
+</head>
+
+<body>
+    <script>
+        // var i=1;
+        // while(i<=100){
+        //     console.log(`老${i}你好小`);
+        //     i++;
+        // }
+        // var i=prompt("你爱我吗");
+        // do{
+        //     i=prompt("你爱我吗阿");
+        // }while(i!=="我爱你")
+
+        // var num=0;
+        // for(var i=0; i<=100;i++){
+        //     if(i%7==0){
+        //         continue;
+        //     }
+        //     num+=i;
+        // }
+        // console.log(num);
+
+        // <---------------------------------------------练习--------------------------------------------------->
+        //求1~100的和与平均数
+        // var score=0;
+        // var n=0;
+        // for(var i=0;i<=100;i++){
+        //     score+=i;
+        // }
+        // n=score/100;
+        // alert("和："+score+"平均数："+n);
+
+        //一到100的偶数和
+        // var even=0;
+        // for(var i=1;i<=100;i++){
+        //     if(i%2!=0){
+        //         continue;
+        //     }
+        //     even+=i;
+        // }
+        // alert("偶数和为："+even);
+
+        // 100以内7的倍数和
+        // var num = 0;
+        // for (var i = 0; i <= 100; i++) {
+        //     if (i % 7 == 0) {
+        //         num += i;
+        //     }
+        // }
+        // alert(num);
+
+        //打印星星
+        // var stras="";
+        // for(var i=1;i<=4;i++){
+        //     for(var j=1;j<=5;j++){
+        //         stras+="★";
+        //     }
+        //     stras+='\n';
+        // }
+        // alert(stras);
+
+        //打印正三角星星
+        // var star="";
+        // for(var i=1;i<=5;i++){
+        //     for(var j=1;j<=i;j++){
+        //         star+="★";
+        //     }
+        //     star+='\n';
+        // }
+        // alert(star);
+
+        //九九乘法表
+        // var st="";
+        // for(var i=1;i<=9;i++){
+        //     for(var j=1;j<=i;j++){
+        //         st+=(j+"x"+i+"="+j*i+"\t");
+        //     }
+        //     st+='\n';
+        // }
+        // console.log(st);
+
+        // 当用户名为admine时,如果密码为"123456",则提示登入成功，否则则一直输入密码;
+        // var name=prompt("亲输入你的用户名");
+        // if(name=="admine"){  
+        //     while(password!="123456"){
+        //         var password=prompt("亲输入你的密码");
+        //     }
+        //     alert("登入成功！");
+        // }else{
+        //     alert("用户名不存在");
+        // }
+
+        //求1~100的累加值，但要求跳过所有个数为3的数
+        // var score=0;
+        // for(var i=1;i<=100;i++){
+        //     if(i%10==3){
+        //         console.log(i);
+        //         continue;
+        //     }
+        //     score+=i;
+        // }
+        // alert(score);
+
+
+        var num = prompt("请输入你的操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出");
+        var score = 100;
+        while(num!=4)
+        {
+            switch (parseInt(num)) {
+                case 1:
+                    var take = prompt("请输入存款金额");
+                    score += parseInt(take);
+                    alert("卡内余额还剩" + score);
+                    break;
+                case 2:
+                    var get = prompt("请输入取款金额");
+                    score = score - get;
+                    alert("卡内余额还剩" + score);
+                    break;
+                case 3:
+                    alert("卡内余额还剩" + score);
+                    break;
+                default:
+                    alert("请输入正确的操作");
+            }
+            num = prompt("请输入你的操作:\n1.存钱\n2.取钱\n3.显示余额\n4.退出");
+        }
+        alert("正在退出......");
+
+    </script>
+</body>
+
+</html>

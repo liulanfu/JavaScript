@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 剩余参数语法允许我们将一个不定数量的参数表示为一个数组，不定参数定义方式，这种方式很方便的去声明不知道参数情况下的一个函数
+        // function sum(first, ...args) {
+        //     console.log(first); // 10
+        //     console.log(args); // [20, 30] 
+        //     let totle=0;
+        //     args.forEach(item => totle += item);
+        //     return totle;
+        // }
+        // sum(10, 20, 30)
+        // console.log(sum(1,2,3,4,5));
+        
+
+        // const rich = ['老刘', '小胖', '吴琦', '欧阳', '大胖', '家良'];
+        // const [s1, s2, s3, ...s4] = rich;
+        // console.log(s1);
+        // console.log(s2);
+        // console.log(s3);
+        // console.log(s4);
+
+//把数组解构成以逗号隔开的数据
+        // console.log(...rich);   //这相当于console.log('老刘'，'小胖',..........);
+
+//合并数组
+    const a1=[1,2,3];
+    const a2=[4,5,6];
+    const a3=[...a1,...a2];
+    console.log(a3);
+    </script>
+    
+</body>
+
+</html>

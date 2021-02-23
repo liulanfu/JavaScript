@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <ul>
+        <li>主题0</li>
+        <li>主题1</li>
+        <li>主题2</li>
+        <li>主题3</li>
+    </ul>
+
+    <!-- 闭包（closure）指有权访问另一个函数作用域中变量的函数。简单理解就是 ，一个作用域可以访问另外一个函数内部的局部变量。  -->
+    <script>
+        // function fn() {
+        //     let num = 10;
+        //     // console.log('aaa');
+        //     return function () {
+        //         return num;
+        //     }
+        // }
+
+        // const newfun = fn();
+        // const val = newfun();
+        // console.log(val);
+
+
+        // function A() {
+        //     const score = 20;
+
+        //     function B() {
+        //         console.log(score);
+        //     }
+        //     B();
+        // }
+        // A();
+
+        let lis = document.querySelectorAll('li');
+
+        for (var i = 0; i < lis.length; i++) {
+            (function (i) {
+                lis[i].onclick = function () {
+                    console.log(i);
+                }
+            })(i);
+        }
+
+        for(var i=0;i< lis.length;i++){
+            (function(a){
+                // console.log(a);
+                setTimeout(function(){
+                    console.log(lis[a].innerHTML);
+                },0);
+            })(i);
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 浅拷贝只是拷贝一层, 更深层次对象级别的只拷贝引用.浅拷贝拷贝的只是地址,更深层次对象级别的只拷贝引用，当拷贝对象修改 更深层次对象级别 其属性时，同时会修改 被拷贝对象 的属性
+        const obj = {
+            id: 1,
+            user: '美的',
+            mes: {
+                age: 18
+            }
+        };
+
+        const o = {};
+        // for (let k in obj) {
+        //     o[k] = obj[k];
+        // }
+        // o.id = 2   //原obj里的id不会被修改
+        // o.mes.age = 20;   //原obj里的更深层次对象级别里的age会被改变，因为拷贝对象拿到的是被拷贝对象的里的更深层次对象级别的地址。他们会共用同一个地址，所以一旦更深层次对象里的属性被修改，两个人都会修改。这就是  浅拷贝
+        // console.log(o);
+        // console.log(obj);
+
+    //es6里的浅拷贝对象方法
+        // Object.assign(需要拷贝的对象,被拷贝对象);
+        Object.assign(o,obj);       // Object.assign()主要是合并;
+        console.log(o);
+
+
+
+    // Object.assign()主要是合并;例如：
+        obj1={
+            text:'asd'
+        }
+
+        Object.assign(obj1,{            
+            age:18
+        });
+        console.log(obj1)
+
+
+    </script>
+</body>
+
+</html>

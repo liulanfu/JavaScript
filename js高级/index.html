@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        width: 500px;
+        background: pink;
+        margin: 200px auto;
+        text-align: center;
+    }
+
+    ul>li {
+        list-style: none;
+        width: 300px
+    }
+
+    li>a {
+        float: right;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <span>评论</span>
+        <textarea name="" id="" cols="30" rows="10"></textarea>
+        <button>提交</button>
+        <ul>
+            <!-- <li>我叼你妈的<a href="">删除</a></li>
+            <li>我叼你妈的<a href="">删除</a></li> -->
+        </ul>
+    </div>
+    <div>123</div>
+    <div>123</div>
+    <div>123</div>
+    <div>123</div>
+
+    <script>
+        let ul = document.querySelector('ul');
+        let btn = document.querySelector('button');
+        let txt = document.querySelector('textarea');
+
+        btn.onclick = function () {
+            let li = document.createElement('li');
+            li.innerHTML = `${txt.value}<a href="javascript:;">删除</a>`;
+            ul.appendChild(li);
+            let a = document.querySelectorAll('a');
+            for (let i = 0; i < a.length; i++) {
+                a[i].onclick = function () {
+                    this.parentNode.remove();
+                    // ul.removeChild(this.parentNode);
+                }
+            }
+        }
+
+        // const arr = [1, 45, 2, 3, 6];
+        // let newarr=arr.map(function (value) {
+        //     return value * 2;
+        // })
+        // console.log(newarr);
+
+        // let arr=['pink',2,7,'orange'];
+        // let index1=arr.indexOf(7);
+        // let index2=arr.indexOf('pink')
+
+        // console.log(index1);
+        // console.log(index2);
+
+
+        // const div=document.querySelectorAll('div');
+        // const divarr=[...div];
+        // console.log(divarr);
+
+        // const obj = [{
+        //     id: 1,
+        //     name: 'pink'
+        // }, {
+        //     id: 2,
+        //     name: '李四'
+        // }, {
+        //     id: 3,
+        //     name: '老许'
+        // }];
+
+        // const res1 = obj.find(item => item.id === 2);
+        // const res2 = obj.find((item) => {
+        //     return item.id === 3;
+        // })
+        // const res3 = obj.find(function (item) {
+        //     return item.id === 1;
+        // });
+
+        // console.log(res1);
+        // console.log(res2);
+        // console.log(res3);
+
+        // var fruits = ["Banana", "Orange", "Lemon", "Apple", "Mango"];
+        // var citrus = fruits.slice(3);
+        // console.log(citrus);
+
+
+
+        // const arr=[1,85,13,25,116,52,132];
+        // console.log(arr.sort(function (a,b) {
+        //     return b-a;
+        // }));
+
+
+        // 利用递归函数求阶层
+        function getNum(n) {
+            if (n === 1) {
+                return 1;
+            }
+            return n * getNum(n - 1);
+        }
+
+        console.log(getNum(3));
+        console.log(getNum(5));
+
+        //利用递归函数求斐波那契数列 1 1 2 3 5 8 13.......
+        function Num(n) {
+            if (n === 1 || n === 2) {
+                return 1;
+            }
+            return Num(n - 1) + Num(n - 2);
+        }
+
+        console.log(Num(3));
+        console.log(Num(7));
+
+
+        
+    </script>
+</body>
+
+</html>

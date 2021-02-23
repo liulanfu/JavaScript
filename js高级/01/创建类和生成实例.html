@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // class Father{
+        //     constructor(name){
+        //         this.name=name;
+        //     }
+        //     say(song){
+        //         console.log(this.name+song);
+        //     }
+        // }
+        // const ldh=new Father('刘德华');
+        // console.log(ldh.name);
+        // ldh.say('爱你一万年');
+
+
+        class Cat{
+            constructor(uname){
+                this.uname=uname;
+            }
+
+            introduce(animal){
+                console.log("我叫"+this.uname+"会抓"+animal);
+            }
+        }
+
+        const kity=new Cat('tony');
+        kity.introduce('老鼠');
+        const hotdog=new Cat('hotdog');
+        hotdog.introduce('猫');
+        console.log(kity.uname);
+        console.log(hotdog.uname);
+
+
+        const arr=[1,5,6,8];
+        // const str=arr.join('');  //1568     数组转化为字符串
+        const str=arr.join();   //1,5,6,8
+        const newArr=str.split(',');   //split字符串转化为数组
+        console.log(str);
+        console.log(newArr);
+    </script>
+</body>
+</html>

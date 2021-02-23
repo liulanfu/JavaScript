@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Animal(uname) {
+            this.uname = uname;
+        }
+        Animal.prototype.sing = function () {         //把方法声明在原型对象里面，原型对象里面的方法是可以共享的，对象对用不会产生新的内存空间；
+            console.log(this.uname);
+        }
+
+        const ldh = new Animal('刘德华');
+        const zxy = new Animal('张学友');
+        zxy.sing();                      //对象可以调用构造函数里的原型方法原因是因为对象里的__proto__指向构造函数里面的prototype
+        console.log(Animal.prototype === ldh.__proto__);
+        console.log(ldh.__proto__ === zxy.__proto__);
+
+
+
+        function Star(age) {
+            this.age = age;
+        }
+        Star.prototype = {
+            construct:Star,      //如果是用对象的形式给原型添加一些共享的方法，就需要先用construct指回Star构造函数,不指回会被覆盖。
+            sing: function () {
+                console.log('aaa');
+            },
+            catch: function () {
+                console.log("bbb");
+            }
+        }
+        console.log(Star.prototype.construct);
+    </script>
+</body>
+
+</html>

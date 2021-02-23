@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // //Object.keys(obj)用于获取对象自身所有的属性,以数组的形式返回
+        // const obj={
+        //     name: 'yy',
+        //     sex: 'girl',
+        //     money: 1000,
+        //     hieght:'1.75m'
+        // }
+
+        // const ic=Object.keys(obj);      //返回的是一个数组
+        // console.log(ic);         
+
+        // ic.forEach(function(value){
+        //     console.log(value);
+        // });
+
+
+        const obj = {
+            name: 'yy',
+            sex: 'girl',
+            money: 1000,
+            hieght: '1.75m'
+        }
+
+        const arr = Object.keys(obj);   //静态方法
+        console.log(arr);
+        arr.forEach(function (value) {
+            console.log(value);
+        });
+     
+    </script>
+</body>
+
+</html>

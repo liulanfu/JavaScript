@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <script>
+        var x = 1;   //x=6
+        var obj = {
+            x: 2
+        }
+        obj.fn = (function (x) {
+            this.x *= x++;    //4   x=3
+            return function (y) {
+                x += y;    //3+2
+                this.x *= ++x;   //x=6   //8
+                console.log(x);
+            }
+        })(obj.x);
+        var fn = obj.fn;
+        obj.fn(2);   //6
+        fn(1);
+        console.log(obj.x, x);
+    </script> -->
+
+    <script>
+        //闭包的主要作用是延伸了变量的作用范围
+        var x = 1;   //
+        var obj = {
+            x: 2
+        }
+        obj.fn = (function (x) {//window   //形参里面的x是obj.x，因为立即执行函数传来了一个obj.x;
+            // console.log(this);
+            this.x *= x++;    //  this.x = this.x * x++ // 2  此时全局的x变成了2
+            // 这里x变成3
+            return function (y) {
+                x += y;    //
+                // console.log(this)     
+                this.x *= ++x;   //12
+                console.log(x);
+            }
+        })(obj.x);
+        var fn = obj.fn;    //执行函数后返回return里返回的函数把他赋给fn
+        obj.fn(2);   //6
+        // obj
+        // function (y) {  
+
+        //         x += y;    //  5      
+        //         this.x *= ++x;   // this.x *6  //12     这里的this指向obj
+        //         // console.log(x);  //6
+        //     }
+
+
+
+        fn(1);
+        // this => window
+        // function (y) {  1
+        //         x += y;    // 7
+        //         this.x *= ++x;   //  this.x *8 //16
+        //         // console.log(x); 
+        //     }
+        console.log(obj.x, x);
+    </script>
+</body>
+
+</html>

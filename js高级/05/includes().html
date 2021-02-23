@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // //判断某个数组是否包含给定的值，返回布尔值。includes()不仅可以判断 数组 还可以判断 字符串
+        // const arr = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i'];
+        // const str = 'abcdefghij';
+        // const flag = arr.includes('d');
+        // const flags = arr.includes('n');
+        // console.log(flag, flags);
+
+        //求两个数的交集
+        const arr = ['a', 'b', 'c', 'd', 'j', 'n'];
+
+        const arr1 = ['a', 'b', 'c', 'd', 'e', 'f', 'j'];
+
+        // const a = arr.filter(function (item) {
+        //     return arr1.includes(item);
+        // })
+        // const b = arr.filter(item => arr1.includes(item))
+        // console.log(b);
+        const a = arr.map(item => {
+            if (arr1.includes(item)) {
+                return item;
+            }
+        })
+        console.log(a);
+    </script>
+</body>
+
+</html>

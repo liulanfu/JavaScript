@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第五天</title>
+</head>
+
+<body>
+    <script>
+        // function a(){
+        //     for(var i=0;i<arguments.length;i++){
+        //         console.log(arguments[i]);
+        //     }
+        // }
+        // a(1,2,5,7,8,9,8);
+        // var arr=[1,5,8,7,9,5,2]
+        // for(var i of arr){
+        //     console.log(i);
+        // }
+        // function getmax(){
+        //     var max=arguments[0];
+        //  //写法一
+        //     // for(var i=0;i<arguments.length;i++){
+        //     //     if(max<arguments[i]){
+        //     //         max=arguments[i];
+        //     //     }
+        //     // }
+        //  //写法二
+        //     for(var elements of arguments){
+        //         if(elements>max){
+        //             max=elements;
+        //         }
+        //     }
+        //     return max;
+        // }
+        // var result=getmax(1200000,546,888,999,74585,78465266);
+        // alert(result);
+
+
+        //剩余参数
+        // function fn(...arr){
+        //     alert(arr);
+        // }
+        // fn(1,2,5,6,8,7,9,85,4,5);
+
+        // function fn(a,...arr){
+        //     alert(arr);
+        // }
+        // fn(1,2,5,6,8,7,9,85,4,5);
+
+
+        // 翻转数组方法一
+        // function reverse(arr){
+        //     var newArr=[];
+        //     for(var i=arr.length-1;i>=0;i--){
+        //         newArr[newArr.length]=arr[i];
+        //     }
+        //     return newArr;
+        // }
+        // 翻转数组方法二
+        // function reverse(...arr){
+        //     var newArr=[];
+        //     for(var i=arr.length-1;i>=0;i--){
+        //         newArr[newArr.length]=arr[i];
+        //     }
+        //     return newArr;
+        // }
+        // 翻转数组方法三
+        // function reverse(){
+        //     var newArr=[];
+        //     for(var i=arguments.length-1;i>=0;i--){
+        //         newArr[newArr.length]=arguments[i];
+        //     }
+        //     return newArr;
+        // }
+        // var result=reverse("小胖","吴琦","家良","欧阳","大胖");
+        // alert(result);
+
+
+        //冒泡排序函数封装一
+        // function sort(arr){
+        //     for(var i=0;i<arr.length-1;i++){
+        //         for(var j=0;j<arr.length-i-1;j++){
+        //             if(arr[j]>arr[j+1]){
+        //                 var temp=arr[j];
+        //                 arr[j]=arr[j+1];
+        //                 arr[j+1]=temp;
+        //             }
+        //         }
+        //     }
+        //     return arr;
+        // }
+        //冒泡排序函数封装-----不动用原数组
+        // function sort(arr){
+        //     var newArr=[...arr];    //[...arr]是展开参数
+        //     for(var i=0;i<newArr.length-1;i++){
+        //         for(var j=0;j<newArr.length-i-1;j++){
+        //             if(newArr[j]>newArr[j+1]){
+        //                 var temp=newArr[j];
+        //                 newArr[j]=newArr[j+1];
+        //                 newArr[j+1]=temp;
+        //             }
+        //         }
+        //     }
+        //     return newArr;
+        // }
+        // var newArr= [512,5,8,7,4,5,9,2,5,7];
+        // var result=sort(newArr);
+        // console.log(result,newArr); 
+
+        // function isLeapYear(year) {
+        //     var isLeapYearCondition = year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
+        //     return isLeapYearCondition;
+        // }
+        // alert(isLeapYear(2001));
+
+        //判段一年的二月有多少天
+        // function getFebdays(){
+        //     var year=prompt("亲输入年份：");
+        //     if(isLeapYear(year)){
+        //         return alert(`${year}年的二月有29天`);
+        //     }
+        //     alert(`${year}的二月有28天`);
+        // }
+        // getFebdays();
+        // function isLeapYear(year){
+        //     var isLeapYearCondition=year % 4 === 0 && year % 100 !== 0 || year % 400 === 0;
+        //     return isLeapYearCondition;
+        // }
+
+
+        //命名函数
+        // function fn1(){
+        //     console.log("命名函数");
+        // }
+        // fn1();
+        //匿名函数
+        // var fn2=function(){
+        //     console.log("匿名函数");
+        // }
+        // fn2();
+        //箭头函数
+        // var fn3=()=>{
+        //     console.log("箭头函数");
+        // }
+        // fn3();
+
+        //利用函数判断闰年
+        // function PLyear(){
+        //     var year=prompt("亲输入年份！");
+        //     if(judge(year)){
+        //         alert(year+"年,是闰年");
+        //     }else{
+        //         alert(year+"年，是平年");
+        //     }
+        // }
+        // function judge(year) {
+        //     var flag=false;
+        //     if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0){
+        //         flag=true;
+        //     }
+        //     return flag;
+        // }
+        // // alert(judge(2000));
+        // PLyear();
+
+        // {
+        //     var num=10;
+        //     console.log(num);
+        // }
+        // console.log(num);
+        // {
+        //     let num=10;
+        //     console.log(num);
+        // }
+
+        // var num = 10;
+        // function foo() {
+        //     var num = 20;
+        //     function fn() {
+        //         var num = 30;
+        //         console.log(num);
+        //     }
+        //     fn();
+        // }
+        // foo();
+
+
+        //<---------------------------var在es6已经被遗弃了,let是变量(使用比较谨慎),const是常量一般声明赋值后不能被改变;-------------->
+
+        // let num=10;        //let num=10;当num被声明后不能再声明相同的num变量名了;
+        // console.log(num);
+        // const num1=20;
+        // console.log(num1);    //当num1=20;用const类型声明后，就是一个常量了，一旦声明赋值后，它的值就不能被后面改变或者覆盖;
+
+
+
+
+        //<------------------------------------------对象--------------------------------------------------------->
+
+
+        // const person={
+        //     name:"张三",
+        //     age:18,
+        //     height:175,
+        //     "man":"男",
+        //     // play:function(){
+        //     //     console.log("他会打篮球");
+        //     // }
+        // //es6对象里的方法写法
+        //     play(){
+        //         console.log("他会打篮球"); 
+        //     }
+        // }
+        // var sex="man";
+        // console.log(person.name);
+        // console.log(person["name"]);
+        // console.log(person[sex]);
+        // person.play();
+        // person["play"]();
+        // //添加属性
+        // person.hobby="打篮球";
+        // console.log(person.hobby);
+        // //改变属性里面的值
+        // person.name="张三疯";
+        // console.log(person.name);
+
+        // const obj=new Object();
+        // obj.name="烧饼";
+        // obj.age=18;
+        // obj.play=function(){
+        //     console.log("他不会打篮球");
+        // }
+        // obj.go=()=>{
+        //     console.log("巧了，他啥也不会");
+        // }
+
+        // console.log(obj.age);
+        // console.log(obj.name);
+        // obj.play();
+        // obj.go();
+
+
+
+        //工厂方式
+        // function obj(name,age,hobby){
+        //     return {
+        //         name:name,
+        //         age:age,
+        //         hobby:hobby
+        //     }
+        // }
+        // //es6写法
+        // function obj(name,age,hobby){
+        //     return {
+        //         name,
+        //         age,
+        //         hobby
+        //     }
+        // }
+
+        // function obj(name,age,hobby){
+        //     const newObject=new Object();
+        //     newObject.name=name,
+        //     newObject.age=age,
+        //     newObject.hobby=hobby;
+        //     return newObject;
+        // }
+        // const result=obj("小胖",22,"打飞机");
+        // const result1=obj("烧饼",22,"打手枪");
+        // console.log(result);
+        // console.log(result1);
+
+
+        // function Person(name,age,hobby){
+        //     this.name=name;
+        //     this.age=age;
+        //     this.hobby=hobby;
+        //     this.play=function(){
+        //         console.log("烧饼会打飞机");
+        //     }
+        // }
+
+        // const sp=new Person("烧饼",22,"打飞机");
+        // console.log(sp);
+        // console.log(sp.name);
+        // console.log(sp.age);
+        // console.log(sp.hobby);
+        // sp.play();
+
+        // function Hero(name,type,blood,attack){
+        //     this.name=name;
+        //     this.type=type;
+        //     this.blood=blood;
+        //     this.attack=function(skill){
+        //         console.log(`${this.name}发起了${skill}攻击`);
+        //     }
+        // }
+        // //原型成员
+        // Hero.prototype.play=function(){
+        //     console.log("妲己正在蹲草");
+        // }
+
+        // const hero=new Hero("妲己","法师",3000);
+        // // hero.attack("魅惑");
+        // // hero.play();
+
+        // // for(let k in hero){
+        // //     console.log(hero[k]);
+        // // }
+
+        // //不返回原先成员
+        // for(let k in hero){
+        //     if(hero.hasOwnProperty(k)){
+        //         console.log(hero[k]);
+        //     }
+        // }
+
+
+        // <---------------------------------------------作业-------------------------------------------------------->
+
+        //    function Computer(color,weight,trademark,type){
+        //             this.color=color;
+        //             this.weight=weight;
+        //             this.trademark=trademark;
+        //             this.type=type;
+        //             this.look=function(){
+        //                 console.log("看电影");
+        //             }
+        //             this.listen=function(){
+        //                 console.log("听音乐");
+        //             }
+        //             this.play=function(game){
+        //                 console.log("打"+game+"游戏");
+        //             }
+        //             this.playCode=function(){
+        //                 console.log("敲代码");
+        //             }
+        //    }
+        //    const p1=new Computer("black",15,"神州","z-785");
+        //    console.log(p1);
+        //    for(let key in p1){
+        //        console.log(p1[key]);
+        //    }
+        //    p1.look();
+        //    p1.listen();
+        //    p1.play("篮球");
+        //    p1.playCode();
+
+
+        //   function Button(width,height,background){
+        //            this.width=width;
+        //            this.height=height;
+        //            this.background=background;
+        //            this.click=function(){
+        //                console.log("有本事你点我");
+        //            }
+        //   }
+        //   const btn=new Button("200px","150px","skyblue");
+        //   console.log(btn);
+        //   btn.click();
+
+
+        //   function Car(weight,color,type){
+        //       this.weight=weight;
+        //       this.color=color;
+        //       this.type=type;
+        //       this.manned=function(){
+        //           console.log("你需要载几个人");
+        //       }
+        //       this.goods=function(){
+        //           console.log("你需要拉什么货");
+        //       }
+        //       this.plowing=()=>{
+        //           console.log("我可以耕田");
+        //       }
+        //   }
+        //   const car1=new Car(150000,"red","布加迪");
+        //   console.log(car1);
+        //   car1.manned();
+        //   car1.goods();
+        //   car1.plowing();
+
+        //数组翻转
+        // function turn(...arr){
+        //     let newArr=[];
+        //     for(let i=arr.length-1;i>=0;i--){
+        //         newArr[newArr.length]=arr[i];
+        //     }
+        //     return newArr;
+        // }
+        // let result=turn(1,2,3,4,5,6,7);
+        // console.log(result);
+
+        //数组排序
+        // function  rank(arr){
+        //     let newArr=[...arr];
+        //     for(let i=0;i<newArr.length-1;i++){
+        //         for(let j=0;j<newArr.length-i-1;j++){
+        //             if(newArr[j]>newArr[j+1]){
+        //                 let temp=newArr[j];
+        //                 newArr[j]=newArr[j+1];
+        //                 newArr[j+1]=temp;
+        //             }
+        //         }
+        //     }
+        //     return newArr;
+        // }
+        // let newArr= [512,5,8,7,4,5,9,2,5,7];
+        // let result=rank(newArr);
+        // console.log(newArr,result); 
+
+
+
+        // function count() {
+        //     let fun = parseInt(prompt("欢迎使用简易计算器：\n1.加法运算\n2.减法运算\n3.乘法运算\n4.除法运算\n5.退出"));
+        //     while (fun != 5) {
+        //         if(fun<5){
+        //             let num1 = parseInt(prompt("亲输入第一个数！"))
+        //             let num2 = parseInt(prompt("亲输入第二个数！"))
+        //             switch (fun) {
+        //             case 1:
+        //                 if (isNaN(num1) || isNaN(num2)) {
+        //                     alert("你输入的数据不对！");
+        //                 } else {
+        //                     alert("运算结果是：" + (num1 + num2))
+        //                 }
+        //                 break;
+        //             case 2:
+        //                 if (isNaN(num1) || isNaN(num2)) {
+        //                     alert("你输入的数据不对！");
+        //                 } else {
+        //                     alert("运算结果是：" + (num1 - num2))
+        //                 }
+        //                 break;
+        //             case 3:
+        //                 if (isNaN(num1) || isNaN(num2)) {
+        //                     alert("你输入的数据不对！");
+        //                 } else {
+        //                     alert("运算结果是：" + (num1 * num2))
+        //                 }
+        //                 break;
+        //             case 4:
+        //                 if (isNaN(num1) || isNaN(num2)) {
+        //                     alert("你输入的数据不对！");
+        //                 } else {
+        //                     alert("运算结果是：" + (num1 / num2))
+        //                 }
+        //                 break;
+        //         }
+        //         }else{
+        //             alert("亲输入正确的操作");
+        //         }
+        //         fun = parseInt(prompt("欢迎使用简易计算器：\n1.加法运算\n2.减法运算\n3.乘法运算\n4.除法运算\n5.退出"));
+        //     }
+        //     alert("正在退出......");
+        // }
+
+        // count();
+
+    </script>
+</body>
+
+</html>

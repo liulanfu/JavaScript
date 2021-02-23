@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = [{
+            name: 'itcast'
+        }, {
+            name: '黑马'
+        }, {
+            name: 'laow'
+        }];
+
+    //---------------------arr.find()方法-返回符合条件的元素------------------
+        // arr.find((item) => {
+        //     return item.name === 'laow';
+        // })
+        //简写
+        const newarr = arr.find(item => item.name === 'laow')
+        console.log(newarr);
+
+
+    //---------------------arr.findIndex()方法-返回符合条件的元素的索引------------------
+        const index = arr.findIndex((item) => {
+            return item.name === 'laow';
+        })
+        console.log(index);
+    </script>
+</body>
+
+</html>

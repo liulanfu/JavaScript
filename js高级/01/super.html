@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Father{
+            say(){
+                console.log('I am father');
+            }
+        }
+
+        // class Son extends Father{
+        //     say(){
+        //         console.log('I am son');
+        //     }
+        // }
+        // const a=new Son();
+        // a.say();    //say() 就近原则，虽然会继承父类的say()方法，但是也还是要遵循就近原则
+
+        class Son extends Father{
+            say(){
+                super.say();    // super.say()调用父类里面的say()方法
+            }
+        }
+        const a=new Son();
+        a.say();    //say() 就近原则，虽然会继承父类的say()方法，但是也还是要遵循就近原则
+
+        //总结
+        //继承中的属性或者方法查找原值：就近原则
+        //1.继承中，如果实例化的子类输出一个方法，先看子类有没有这个方法，如果有就先执行子类的
+        //2.继承中，如果子类里面没有，就去查找父类有没有这个方法，如果有，就执行父类的这个方法（就近原则）
+
+
+
+
+
+
+
+        class Father1{
+            call(){
+                return 'fahter';
+            }
+        }
+
+        class Son1 extends Father1{
+            call(){
+                console.log(super.call()+"i am son");
+            }
+        }
+
+        const son1=new Son1();
+        son1.call();
+    </script>
+</body>
+</html>

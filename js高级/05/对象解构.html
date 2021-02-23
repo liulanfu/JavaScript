@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const obj={
+            name: 'xiaom',
+            age: 18,
+            hobby:'吃饭'
+        }
+        const {name,age,hobby} =obj;     //这里的变量名一定要与对象里的属性名一致才可以被获取；这里的赋值相当于name=obj.name,age=obj.age,hobby=obj.hobby
+        console.log(name,age,hobby);
+
+        const obj11={
+            name:'itcastt'
+        }
+        const {name:myName}=obj11;
+        console.log(myName);
+
+
+        // const aaa={
+        //     name,age,hobby,myName    //此时的name,age,hobby,myName是上面解构出来的   
+        // }
+        // console.log(aaa);
+    </script>
+</body>
+</html>

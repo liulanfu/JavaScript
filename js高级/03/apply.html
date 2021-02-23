@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const arr = [1, 2, 5, 8, 9, 22, 1];
+        console.log(Math.max(1, 55, 88, 44));
+        const min = Math.min.apply(Math, arr);    //apply()是把数组转化为以逗号个开的参数传进函数里
+        const max = Math.max.apply(Math, arr);
+        console.log(min);
+        console.log(max);
+
+        function colorize(c1, c2) {
+            console.log(c1, c2);
+        }
+
+        colorize.apply(colorize, ['pink', 'yellow']);
+    </script>
+</body>
+
+</html>

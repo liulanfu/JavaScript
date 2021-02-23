@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //    class Father{
+        //        constructor(x,y){
+        //             this.x=x;
+        //             this.y=y;
+        //        }
+        //        pay(){
+        //            console.log(100);
+        //        }
+        //        totle(){
+        //            console.log(this.x+this.y);
+        //        }
+        //    }
+
+        //    class Son extends Father{     //extends表示继承父类，可以继承父类的属性和方法
+        //        constructor(x,y){
+        //            super(x,y);       //super()调用了父类的构造函数
+        //        }
+        //    }
+
+        //    const a1=new Son(1,20);
+        //    a1.pay();   //继承父类的方法
+        //    a1.totle();
+
+
+        class Father {
+            constructor(x, y) {
+                this.x = x;
+                this.y = y;
+            }
+            add() {
+                console.log(this.x + this.y);
+            }
+        }
+
+        class Son extends Father {
+            constructor(x, y) {
+                super(x, y);      //如果子类不写构造函数那就默认调用了父元素的构造函数，如果子类有自己的构造函数，那构造函数里必须写super()方法来调用父类的构造函数，不写的话会报错；
+            }
+        }
+
+        const son=new Son(1,2);
+        son.add();
+    </script>
+</body>
+
+</html>

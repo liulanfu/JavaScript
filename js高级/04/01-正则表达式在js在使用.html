@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    span{
+        color: #ccc;
+    }
+    .right{
+        color:rgb(27, 128, 27)
+    }
+    .wrong{
+        color: red;
+    }
+</style>
+
+<body>
+    <input type="text" class='uname'> <span>亲输入用户名</span>
+    <script>
+        // // 正则表达式在js中的使用
+
+        // // 1. 利用 RegExp对象来创建 正则表达式
+        // var regexp = new RegExp(/123/);
+        // console.log(regexp);
+
+        // // 2. 利用字面量创建 正则表达式
+        // var rg = /123/;
+        // // 3.test 方法用来检测字符串是否符合正则表达式要求的规范
+        // console.log(rg.test(123));
+        // console.log(rg.test('abc'));
+
+
+        // const a1 = /^[a-zA-Z0-9-_]$/
+        // const a1 = /^[^a-zA-Z0-9-_]$/     //如果在[]里面加了^表示的是取反的意思
+        // console.log(a1.test('a'));      //true
+        // console.log(a1.test('a1'));     //false
+        // console.log(a1.test('1'));      //true
+        // console.log(a1.test('-'));      //true
+        // console.log(a1.test('_'));      //true
+        // console.log(a1.test('!'));      //false
+
+
+        // const a1 = /^a*$/     // 1. * 相当于 >= 0 可以出现0次或者很多次 
+        //     console.log(a1.test('a'));
+        //     console.log(a1.test(''));
+        // const a2 = /^a+$/      // 2. + 相当于 >= 1 可以出现1次或者很多次
+        //     console.log(a2.test('a'));
+        //     console.log(a2.test(''));
+        // const a3 = /^a?$/     //  3. ?  相当于 1 || 0
+        //     console.log(a3.test('a'));
+        //     console.log(a3.test(''));
+        // const a4 = /^a{3}$/     //  4. {3 } 就是重复3次
+        //     console.log(a4.test('a'));
+        //     console.log(a4.test(''));
+        //     console.log(a4.test('aaa'));
+        // const a5 = /^a{3,}$/     // 5. {3, }  大于等于3
+        //     console.log(a5.test('a'));
+        //     console.log(a5.test(''));
+        //     console.log(a5.test('aaa'));
+        //     console.log(a5.test('aaaaaaaaaaaa'));
+        // // 6. {3, 16}  大于等于3 并且 小于等于16
+        // const reg = /^a{3,16}$/;
+        //     console.log(reg.test(''));
+        //     console.log(reg.test('a'));
+        //     console.log(reg.test('aa'));
+        //     console.log(reg.test('aaaaaa'));
+        //     console.log(reg.test('aaa'));
+        //     console.log(reg.test('aaaaaaaaaaaaaaaaaaaaa'));
+
+        const arr = /^[a-z0-9A-Z-]{6,16}$/       //  /^[a-z0-9A-Z-]{6,16}$/ 
+        console.log(arr.test('1245652589'))
+
+        let inp=document.querySelector('.uname');
+        let span=document.querySelector('span');
+        inp.addEventListener('blur',function(){
+            if(arr.test(this.value)){
+                span.className='right';
+                span.innerHTML='输入的格式正确';
+            }else{
+                span.className='wrong';
+                span.innerHTML='输入的格式错误';
+            }
+        })
+
+    </script>
+</body>
+
+</html>

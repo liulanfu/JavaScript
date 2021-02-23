@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+    //箭头函数的基本写法
+        const fn = () => {
+            console.log("123456");
+        };
+        fn();
+
+    //箭头函数如果省略后面的{}默认会返回值
+        const fu = () => 6
+        // const fu = () => {
+        //   return  6
+        // }
+        // let a=fu()
+        // console.log(a);
+
+    //若形参只有一个可以省略（）；
+        // const fu = v => v
+        // //这相当于
+        // const fu = (v) => {
+        //     return v
+        // }
+
+    // 箭头函数不绑定this关键字，箭头函数中的this，指向的是函数定义位置的上下文this
+        // const obj = { name: '张三' }
+        // function fn() {
+        //     console.log(this);//this 指向 是obj对象
+        //     return () => {
+        //         console.log(this);//this 指向 的是箭头函数定义的位置，那么这个箭头函数定义在fn里面，而这个fn指向是的obj对象，所以这个this也指向是obj对象
+        //     }
+        // }
+        // const resFn = fn.call(obj);
+        // resFn();
+
+        const obj = { name: '111'};
+        // 箭头函数不绑定this关键字，箭头函数中的this，指向的是函数定义位置的上下文this
+            // const fn=()=>{
+            //     console.log(this);
+            // };
+        //如果要把普通函数写成箭头函数就在后面加一个bind(this);
+            // const fn=function() {
+            //     console.log(this);
+            // }.bind(this);
+    
+        // obj.fn = fn;
+        // obj.fn();
+    </script>
+</body>
+
+</html>

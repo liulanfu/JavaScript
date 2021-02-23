@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //-----------------------递归里面必须加退出条件-----------------------------------------
+        // var i = 0;
+        // function get() {
+        //     console.log('aaa');
+        //     if (i == 6) {
+        //         return;
+        //     }
+        //     i++
+        //     get();
+        // }
+        // get();
+
+        // 利用递归函数求1~n的阶层
+        // function fn(n) {
+        //     if (n == 1) {
+        //         return 1;
+        //     }
+
+        //     return n * fn(n - 1);
+        // }
+
+        // console.log(fn(5));
+
+        //斐波那契数列
+        // function fb(n) {
+        //     if(n===1||n ===2){
+        //         return 1;
+        //     }
+        //     return fb(n - 1) + fb(n - 2);
+        // }
+
+        // console.log(fb(5));
+
+
+        //我们想要做输入id号,就可以返回的数据对象
+        var data = [{
+            id: 1,
+            name: '家电',
+            goods: [{
+                id: 11,
+                gname: '冰箱',
+                goods: [{
+                    id: 111,
+                    gname: '海尔'
+                }, {
+                    id: 112,
+                    gname: '美的'
+                },
+
+                ]
+
+            }, {
+                id: 12,
+                gname: '洗衣机'
+            }]
+        }, {
+            id: 2,
+            name: '服饰',
+            goods: [{
+                id: 8,
+                name: '玩得'
+            }]
+        }];
+
+        function getdata(josn, id) {
+            let arr = null;
+            josn.forEach(function (item) {
+                if (item.id == id) {
+                    arr = item;
+                } else if (!arr && item.goods && item.goods.length > 0) {    //!arr就是意思arr为空 
+                    arr = getdata(item.goods, id);
+                }
+
+            });
+            return arr;
+        };
+
+        console.log(getdata(data, 1));
+        console.log(getdata(data, 112));
+        console.log(getdata(data, 2));
+
+
+        // function get(n) {
+        //     if (n == 1) {
+        //         return 1
+        //     }
+        //     return n * get(n - 1);
+        // }
+
+        // console.log(get(3));
+
+        // function getnum(n) {
+        //     if (n == 1 || n == 2) {
+        //         return 1;
+        //     }
+        //     return getnum(n - 1) + getnum(n - 2);
+        // }
+        // console.log(getnum(5));
+    </script>
+</body>
+
+</html>

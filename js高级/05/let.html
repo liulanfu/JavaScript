@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // let和const不会挂载到window身上  挂载在script身上
+
+        //用let 声明的变量没有提升，必须得先声明在使用
+        // if (true) {
+        //     let num = 10;
+        //     var al = 20;
+        // }
+        // console.log(al);
+        // // console.log(num);
+
+        // function aa() {
+        //     let a = 10;
+        //     var b = 20;
+        // }
+        // console.log(b);   //在函数里面定义的变量在外面都访问不到
+        // console.log(a);   //在函数里面定义的变量在外面都访问不到
+
+        // for (var i = 0; i < 20; i++) {
+        //     //for循环里面申明的i可以在外面访问，而用let声明的变量不能再外面访问
+        // }
+
+
+        // 暂时性死区 暂时性死区
+        // 利用let声明的变量会绑定在这个块级作用域，不会受外界的影响
+        // var tmp = 123;
+        // if (true) {
+        //     tmp = 'abc';
+        //     let tmp;
+        // }
+
+        // var arr = [];
+        // for (var i = 0; i < 2; i++) {
+        //     arr[i] = function () {
+        //         console.log(i);
+        //     }
+        // }
+
+        // arr[0]();
+        // arr[1]();
+
+        var arr = [];
+        for (let i = 0; i < 2; i++) {    
+            arr[i] = function () {
+                console.log(i);
+            }
+        }
+
+        arr[0]();  //因为let有块级作用域所以是正常输出索引
+        //这里就相当于
+        // {
+            // i=0;
+            // arr[i] = function () {
+            //         console.log(i);
+            //     }
+        // }
+        arr[1]();
+        //这里就相当于
+        // {
+            // i=1;
+            // arr[i] = function () {
+            //         console.log(i);
+            //     }
+        // }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // //借用父构造函数继承属性
+        // function Father(name, age) {
+        //     //this指向父构造函数对象实例
+        //     this.name = name;
+        //     this.age = age;
+        // }
+
+        // function Son(name, age, num) {
+        //     //this指向子构造函数对象实例
+        //     Father.call(this, name, age);  //利用call()调用父构造函数，改变其this指向，让现在的this指向Son的实例对象。然后就相当于继承了父级的属性，即借用父构造函数继承属性
+
+        //     //继承父级的同时不影响自己设置的属性
+        //     this.num = num;
+        // }
+
+        // const obj = new Son('jock', 18, 98);
+        // console.log(obj);
+
+
+
+        // 借用父构造函数继承属性
+        // 1. 父构造函数
+        function Father(uname, age) {
+            // this 指向父构造函数的对象实例
+            this.uname = uname;
+            this.age = age;
+        }
+        // 2 .子构造函数 
+        function Son(uname, age, score) {
+            // this 指向子构造函数的对象实例
+            Father.call(this, uname, age);
+            this.score = score;
+        }
+        var son = new Son('刘德华', 18, 100);
+        console.log(son);
+    </script>
+</body>
+
+</html>

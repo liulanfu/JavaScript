@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //es6之前用构造函数来实现继承
+        //子类继承父类的属性和方法：在子类里面需要调用父类.call()，call里面第一个常数要指回子类。
+        //子类继承父类的原型方法：例如：son.prototype=new Father{};后面也需要son.prototype.construct=son;
+
+        // 借用父构造函数继承属性
+        // 1. 父构造函数
+        function Father(uname, age) {
+            // this 指向父构造函数的对象实例
+            this.uname = uname;
+            this.age = age;
+        }
+        Father.prototype.money = function () {
+            console.log(100000);
+
+        };
+        // 2 .子构造函数 
+        function Son(uname, age, score) {
+            // this 指向子构造函数的对象实例
+            Father.call(this, uname, age);
+            this.score = score;
+        }
+        // Son.prototype = Father.prototype;  这样直接赋值会有问题,如果修改了子原型对象,父原型对象也会跟着一起变化
+        Son.prototype = new Father();
+        // 如果利用对象的形式修改了原型对象,别忘了利用constructor 指回原来的构造函数
+        Son.prototype.constructor = Son;
+        // 这个是子构造函数专门的方法
+        Son.prototype.exam = function () {
+            console.log('孩子要考试');
+
+        }
+        var son = new Son('刘德华', 18, 100);
+        console.log(son);
+        console.log(Father.prototype);
+        console.log(Son.prototype.constructor);
+    </script>
+</body>
+
+</html>

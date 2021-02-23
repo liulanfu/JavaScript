@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const car = (function () {
+            var start = 13;
+            var totle = 0;
+            return {
+                price: function (n) {
+                    if (n <= 3) {
+                        totle = start;
+                    } else {
+                        totle = start + (n - 3) * 5;
+                    }
+                    return totle;
+                },
+                yd: function (flag) {
+                    return flag ? totle + 10 : totle;
+                }
+            }
+        })();
+
+        console.log(car.price(2));  //13
+        console.log(car.yd(true));  //23
+        console.log(car.price(6));  //28
+        console.log(car.yd(false));  //28
+        console.log(car.yd(true));   //38
+
+    </script>
+</body>
+
+</html>

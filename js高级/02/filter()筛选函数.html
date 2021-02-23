@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // const array=[11,5,4,8,74,65,221,13,5,46,8];
+
+        // let arr=array.filter(function(currentValue, index){
+        //     return currentValue>=20;       //把大于20的值筛选出来，放入一个数组，然后返回出一个符合条件的数组
+        // });
+
+        const array = [13, 5, 46, 8, 'a', 'b'];
+
+        let arr = array.filter(function (currentValue, index) {
+            return (typeof currentValue === 'string');
+        });
+
+        console.log(arr);
+    </script>
+</body>
+
+</html>

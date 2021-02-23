@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        padding: 10px;
+        width: 800px;
+        height: 500px;
+        background-color: pink;
+        margin: 50px auto;
+        text-align: center;
+    }
+
+    input {
+        width: 100px;
+    }
+
+    table {
+        margin: 50px auto;
+        width: 500px;
+        border-collapse: collapse;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <span>查询价格：</span>
+        <input type="text" class="min-price"> -
+        <input type="text" class="max-price">
+        <button class="search">搜索</button>
+        <span>按照商品名称查询：</span>
+        <input type="text" class="prname">
+        <button class="find">查询</button>
+
+        <table border=1>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>产品名称</th>
+                    <th>价格</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const data = [{
+            id: 1,
+            pname: '小米',
+            price: 3999
+        }, {
+            id: 2,
+            pname: 'oppo',
+            price: 999
+        }, {
+            id: 3,
+            pname: '荣耀',
+            price: 1299
+        }, {
+            id: 4,
+            pname: '华为',
+            price: 1999
+        }, {
+            id: 5,
+            pname: '小米',
+            price: 4999
+        }, {
+            id: 6,
+            pname: 'oppo',
+            price: 599
+        }, {
+            id: 7,
+            pname: '荣耀',
+            price: 2299
+        }, {
+            id: 8,
+            pname: '华为',
+            price: 2999
+        },];
+
+        const tbody = document.querySelector('tbody');
+        const search = document.querySelector('.search');
+        const find = document.querySelector('.find');
+        const minPrice = document.querySelector('.min-price');
+        const maxPrice = document.querySelector('.max-price');
+        const Pname = document.querySelector('.prname');
+        setData(data);
+
+        //封装函数
+        function setData(mydata) {
+
+            tbody.innerHTML = '';
+
+            mydata.forEach(function (value) {
+
+                let tr = document.createElement('tr');
+
+                tr.innerHTML = `<td>${value.id}</td><td>${value.pname}</td><td>${value.price}</td>`;
+
+                tbody.appendChild(tr);
+
+            });
+        };
+
+        //搜索按钮
+        search.addEventListener('click', function () {
+
+            const answer = data.filter(function (value) {
+
+                return value.price > Number(minPrice.value) && value.price < Number(maxPrice.value);
+
+            });
+
+            setData(answer);
+
+        });
+
+        // 查询按钮
+        find.addEventListener('click', function () {
+
+            const newdata = data.filter(function (value) {
+
+                return value.pname == Pname.value;
+
+            });
+
+            setData(newdata);
+
+        });
+
+        //如果查询数组中唯一的数的话这里用some方法效率更高，但是有多条相同厂家的名称不行
+        // find.addEventListener('click',function(){
+        //     let arr=[];
+        //     data.some(function (value){
+        //         if(value.pname===Pname.value){
+        //             arr.push(value);
+        //             return true;
+        //         }
+        //     });
+        //     setData(arr);
+        // })
+    </script>
+</body>
+
+</html>

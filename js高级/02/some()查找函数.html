@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // arr=[4,5,6,8,7,5,1,9];
+        // let num=arr.some(function(value){       //some()函数是查找数组里面是否有这个值，如果找到了就返回true，没找到就返回false；
+        //     return value=7;                     //some()一旦找到第一个符合条件的值就会跳出，不会继续再往下找。
+        // });
+
+        // console.log(num);
+
+
+        arr = [
+            {
+                name: "it"
+            }, {
+                name: "heima"
+            }
+        ]
+
+        let num = arr.some(function (value, index) {
+            return value.name == 'heima';
+        });
+        console.log(num);
+
+        let str = arr.filter(function (value, index) {
+            return value.name == 'heima';
+        })
+        const flag = str.length > 0;
+        console.log(flag);
+
+    </script>
+</body>
+
+</html>

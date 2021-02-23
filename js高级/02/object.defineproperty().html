@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const obj = {
+            name: 'yy',
+            sex: 'girl',
+            money: 1000,
+            hieght: '1.75m'
+        }
+        console.log(obj);
+
+        //没有该属性就添加，有就是修改该属性；
+        //修改
+        Object.defineProperty(obj, 'sex', { value: 'boy' });
+        console.log(obj);
+
+        //添加
+        Object.defineProperty(obj, 'num', { value: 256 });
+        console.log(obj);
+
+
+
+        Object.defineProperty(obj, 'sex', {
+            writable: true,      // writable可以设置该属性能不能被修改,false表示不行，true表示可以修改
+            enumerable: true,  //enumerable如果值为false则不允许遍历,默认值为false
+            configurable: true //configurable如果为false则不予许删除这个属性 不予许在修改第三个参数参数里面的特性,默认为false
+
+        });
+
+        obj.sex = '666';
+        console.log(obj);
+
+
+
+
+        console.log(typeof obj);   //typeof 判断数据的类型  
+        // instanceof 运算符用于检测构造函数的 prototype 属性是否出现在某个实例对象的原型链上。
+        // function Car(make, model, year) {
+        //     this.make = make;
+        //     this.model = model;
+        //     this.year = year;
+        // }
+        // const auto = new Car('Honda', 'Accord', 1998);
+
+        // console.log(auto instanceof Car);
+    // expected output: true
+
+        // console.log(auto instanceof Object);
+    // expected output: true
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>

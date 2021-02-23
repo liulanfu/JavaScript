@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // function fn(x,y){
+        //     console.log('let me get a hight job');
+        //     console.log(x+y);
+        //     console.log(this);
+        // }
+        // //1.call()可以调用函数    
+        // // fn.call();
+
+        // const obj={
+        //     name: '刘德华'
+        // }
+
+        // //2.call()可以改变这个函数this的指向,此时这个函数的this指向obj;
+        // // fn.call(obj);
+        // fn.call(obj,1,2);    //call()的第一个参数只是改变这个函数this的指向，不会影响后面的参数
+
+
+        // function num(x,y){
+        //     console.log(x+y);
+        // }
+
+        // // num.call('windows',2,3);
+        // const obj1=new Object();
+        // num.call(obj1,5,3);
+
+
+        function Father(x, y) {
+            this.x=x;
+            this.y=y;
+        }
+
+        function Son(x, y, score) {
+            Father.call(this, x, y);
+            this.score = score;
+        }
+
+        const obj = new Son(1, 9, 100);
+        console.log(obj);
+        console.log(obj.score);
+    </script>
+</body>
+
+</html>

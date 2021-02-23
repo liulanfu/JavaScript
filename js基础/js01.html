@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    //  var num=prompt("你的名字")
+    //    if(num=="烧饼"){
+    //        alert(num+"不好吃");
+    //    }else{
+    //        alert(num+"好吃");
+    //    }
+    //    console.log("烧饼你怎么可以这个样子");
+    
+    // 打印信息
+    // var name=prompt("亲输入你的名字");
+    // var age=prompt("亲输入你的的年龄");
+    // var sex=prompt("性别");
+    // alert("名字 :"+name+"\n年龄 :"+age+"\n性别 :"+sex);
+
+    /* 成绩测评
+    var score = prompt("亲输入你的考试分数");
+    if(score>=90){
+        alert("你的评分等级为A");
+    }else if(score>=80){
+        alert("你的评分等级为B");
+    }else if(score>=70){
+        alert("你的评分等级为C");
+    }else if(score>=60){
+        alert("你的评分等级为D");
+    }else{
+        alert("你的评分等级为E");
+    }*/
+
+    /*三元表达式
+    var num=prompt("输入名字");
+    var result=num=="刘蘭富" ? "靓仔":"吊毛"
+    alert(result);*/
+
+    /*判断时间阶段
+    var time=prompt("亲输入时间");
+    if(time==12){
+        alert("中午好！");
+    }
+    else if(time==18){
+        alert("傍晚好！");
+    }
+    else if(time==23){
+        alert("深夜好！");
+    }*/
+
+    /*比较大小
+    var num1=prompt("亲输入第一个值");
+    var num2=prompt("亲输入第二个值");
+    if(num1>num2){
+        alert(num1);
+    }else if(num1<num2){
+        alert(num2);
+    }else{
+        alert("两个值一样大")
+    }*/
+
+    /*判断奇偶
+    var num=prompt("输入一个值");
+    if(num==0){
+        alert("即不是偶数也不是奇数");
+    }else if(num%2==0){
+        alert("是偶数");
+    }else{
+        alert("是奇数")
+    }*/
+    /* switch是全等于
+    var day=parseInt(prompt("亲输入1~7得的数"));
+    switch(day){
+        case 1: 
+            alert("星期一");
+            break;
+        case 2: 
+            alert("星期二");
+            break;
+        case 3: 
+            alert("星期三");
+            break;
+        case 4: 
+            alert("星期四");
+            break;
+        case 5: 
+            alert("星期五");
+            break;
+        case 6: 
+            alert("星期六");
+            break;
+        case 7: 
+            alert("星期七");
+            break;
+        default:
+            alert("无匹配")
+    }*/
+   
+   /* var num=1;
+    console.log(isNaN(num)); //false
+    alert(`烧饼是个\'屌丝\''`);
+    // 只有反引号${}才生效
+    console.log(`小胖竟然去了某鸟培训${num}~~~`);
+    */
+
+//    var age=prompt("你想活多久");
+//    for(var i=0;i<=age;i++){
+//        if(i==0){
+//             console.log("你今年"+i+"岁了,今年你刚出生");
+//        }else if(i==age){
+//            console.log("你今年"+i+"岁了,今年你要死了")
+//        }else{
+//            console.log("今年你"+i+"岁了");
+//        }
+//    }
+
+// var num=10;
+// console.log(typeof num.toString() );
+// console.log(typeof String(num));
+// console.log(typeof(num+""));
+// console.log(parseInt("128.356"));
+// console.log(parseFloat("128.356"));
+
+/*var str="12345.258";
+console.log(parseInt(Number(str)))
+var year=prompt("亲输入你的年份");
+var age=2020-year;
+alert("今年你的年龄是"+age+"岁");*/
+
+/*计算班级总成绩和平均成绩
+var student=prompt("亲输入班级总人数");
+var score=0;
+for(var i=1;i<=student;i++){
+    var stu=parseInt(prompt("亲输入第"+i+"个学生的成绩"));
+    score=score+parseInt(stu);
+}
+document.write("总成绩为"+score);
+document.write("平均绩为"+(score/student));*/
+
+// 打印星星 (注意在document.write()里面换行用</br>)----------------->
+//正三角
+// var num1=prompt("亲输入岑苏");
+// var stra="";
+// for(var i=1;i<=num1;i++){
+//     for(var j=i;j<=num1;j++){
+//       document.write("&nbsp;");
+//      }
+//     stra+="★";
+//     document.write(stra);
+//     document.write("</br>")
+// }
+
+// 倒三角
+// var str="";
+// var num=prompt("亲输入先要第几成");
+// for(var i=1;i<=num;i++){  
+//     document.write(str);
+//     str+="&nbsp;"
+//     for(var j=i;j<=num;j++){
+//         document.write("★");
+//      }
+//     document.write("</br>")
+// }
+
+//  控制台打印星星正三角
+// var num=prompt("亲输入你想要的成数");
+// var start="";
+// var kg="";
+// var st="";
+// for(var i=1;i<=parseInt(num);i++){
+//     for(var x=i;x<=parseInt(num);x++){
+//         kg+=" ";
+//     }
+//     for(var j=1;j<=i;j++){
+//         start+="★";
+//     }
+//     st+=kg+start+"\n";
+//     kg="";
+//     start="";
+// }
+// console.log(st);
+
+// 控制台倒三角
+// var num=prompt("亲输入你想要的成数");
+// var start="";
+// var kg="";
+// var st="";
+// for(var i=1;i<=num;i++){
+//     for(var x=i;x<=num;x++){
+//         start+="★";
+//     }
+//     for(var y=1;y<=i;y++){
+//         kg+=",";
+//     }
+//     st=kg+start+"\n";
+//     kg="";
+//     start="";
+//     console.log(st);
+// }
+
+
+// 几行几列打印星星
+// var rows=prompt("亲输入行数");
+// var cols=prompt("亲输入列数");
+// var str="";
+// for(var i=1;i<=rows;i++){
+//     for(var j=1;j<=cols;j++){
+//         str+="★";
+//     }
+//     str+='\n';
+// }
+// console.log(str);
+
+
+// console.log(Boolean(""));
+// console.log(Boolean(0));
+// console.log(Boolean(undefined));
+// console.log(Boolean(NaN));
+// console.log(Boolean("hello"));
+// console.log(Boolean("22"));
+// console.log(!!0);
+// console.log(!!"");
+// var a=10;
+// console.log(a++ +10 + ++a); //32
+// console.log(a++ +10 + a++); //31
+// console.loh
+
+
+// console.log(4&&3); //3
+// console.log(0&&3); //0
+// console.log(4||3); //4
+// console.log(0||3); //3
+
+// var a=2;
+// a+=5;
+// console.log(a); //7
+// a-=5;
+// console.log(a); //2
+// a*=5;
+// console.log(a); //10
+// a /=5;
+// console.log(a); //2
+// a%=5;
+// console.log(a); //2
+
+/*乘法表
+var num=prompt("你想要几几乘法表");
+var str="";
+var s=0
+for(var i=1;i<= parseInt(num);i++){
+    for(var j=1;j<=i;j++){
+        s=j*i;
+        str=str+(""+i+"*"+j+"="+s+"\t");
+    }
+    str+="\n";
+}
+console.log(str);*/
+
+// var str="";
+// for(var i=1;i<=9;i++){
+//     for(var j=1;j<=i;j++){
+//         str+=`${j}x${i}=${i*j}\t`
+//     }
+//     str+="\n";
+// }
+// console.log(str);
+
+// var shaob="烧饼";
+// var lanfu="蘭富帅"
+// var sb= shaob.length<lanfu.length ? "烧饼丑":"蘭富还是帅啊";
+// alert(sb);
+
+// var n=prompt("亲输入0~59的一个数字");
+// var s=n<10 ? "0"+n:n;
+// alert(s);
+
+// var num=3;
+// switch(num){
+//     case 1:
+//         alert("这是1");
+//         break;
+//     case 2:
+//         alert("这是2");
+//         break;
+//     case 3:
+//         alert("这是3");
+//         break;
+//     default:
+//         alert("没找到");
+// }
+</script>
+<body>
+    
+</body>
+</html>

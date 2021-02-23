@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第六天</title>
+</head>
+
+<body>
+    <script>
+        // <-----------------------------------------内置对象------------------------------------>
+
+        // function Hero(sex,age,play){
+        //     this.sex=sex;
+        //     this.age=age;
+        //     this.play=function(){
+        //         console.log("他会网");
+        //     }
+        // }
+        // Hero.names="妲己";                  //静态属性
+        // Hero.getName=function(){            //静态方法
+        //     return "她是妲己";
+        // }
+
+        // console.log(Hero.names);
+        // console.log(Hero.getName());
+
+        //写法一
+        // const Mymax = {
+        //     PI: 3.141592653575,
+        //     _max: function (...arges) {
+        //         let _max = arges[0];
+        //         for (let i = 1; i < arges.length; i++) {
+        //             if (_max < arges[i]) {
+        //                 _max = arges[i];
+        //             }
+        //         }
+        //         return _max;
+        //     },
+        //     _min: function (...arges) {
+        //         let _min = arges[0];
+        //         for (let i = 1; i < arges.length; i++) {
+        //             if (_min > arges[i]) {
+        //                 _min = arges[i];
+        //             }
+        //         }
+        //         return _min;
+        //     }
+        // }
+        // console.log(Mymax.PI);
+        // console.log(Mymax._max(1,2,3,55,88,4541,8845,1,2));
+        // console.log(Mymax._min(1,2,3,55,88,4541,8845,1,2));
+
+
+        // console.log(Math.PI);
+        // const maxNum=Math.max.apply(null,[12,54,8,9,356,5,848,1]);
+        // console.log(maxNum);
+
+
+        //写法二，不改变原数组
+        // const myMath = {
+        //     PI: 3.1415926535,
+        //     max: function (...arr) {
+        //         let max = arr[0];
+        //         for (let i = 1; i < arr.length; i++) {
+        //             if (max < arr[i]) {
+        //                 max = arr[i];
+        //             }
+        //         }
+        //         return max;
+        //     },
+        //     min: function (...arr) {
+        //         let min = arr[0];
+        //         for (let i = 1; i < arr.length; i++) {
+        //             if (min > arr[i]) {
+        //                 min = arr[i];
+        //             }
+        //         }
+        //         return min;
+        //     }
+        // }
+        // alert(myMath.PI);
+        // var result = myMath.max(1, 5, 4, 2, 1, 8, 9, 9, 6, 55);
+        // var result1 = myMath.min(1, 5, 4, 2, 1, 8, 9, 9, 6, 55);
+        // console.log(result, result1);
+
+
+        //取绝对值
+        // console.log(Math.abs(-5));    //5
+        // console.log(Math.abs("-3"));  //3
+        // console.log(Math.abs("pink"));  //NaN
+
+        //取整 ,往下取整
+        // console.log(Math.floor(1.9))  //1
+        //往上取整
+        // console.log(Math.ceil(1.3))   //2
+        //四舍五入
+        // console.log(Math.round(1.6))  //2
+        // console.log(Math.round(1.6))  //2
+        // console.log(Math.round(-1.5))  //-1
+
+        // //随机生成一个两个数之间的整数；
+        // function getRandomNum(min,max){
+        //     min=Math.ceil(min);
+        //     max=Math.floor(max);
+        //     return Math.floor(Math.random()*(max-min)+min);
+        // }
+        // console.log(getRandomNum(1,10));
+
+        //得到一个两数之间随机整数,并且包括两数在内;
+        //猜数字
+        // function getRandomInt(min, max) {
+        //     min = Math.ceil(min);
+        //     max = Math.floor(max);
+        //     return Math.floor(Math.random() * (max - min + 1) + min);
+        // }
+        // let result = (getRandomInt(1, 10));
+        // let i = 0;
+        // while (true) {
+        //     let num = parseInt(prompt("亲输入一个1~10的数"));
+        //     i++;
+        //     if (num > result) {
+        //         alert("你才猜大了");
+        //     } else if (num < result) {
+        //         alert("你猜小了");
+        //     } else {
+        //         alert("恭喜你猜对了");
+        //         break;
+        //     }
+
+        //     if (i == 5) {
+        //         alert("次数已达上限！！！,游戏结束");
+        //         break;
+        //     }
+        // }
+
+        // function setZero(num) {
+        //     return num < 10 ? '0' + num : num;
+        // }
+        // function getDate(d = new Date()) {
+        //     //实例化一个时间对象
+        //     const date = new Date(d);
+        //     //日期
+        //     let year = date.getFullYear();
+        //     let month = date.getMonth() + 1;
+        //     let dates = date.getDate();
+        //     let day = date.getDay();
+        //     let week = ["星期天", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"];
+        //     //时间
+        //     let h = date.getHours();
+        //     let m = date.getMinutes();
+        //     let s = date.getSeconds();
+        //     return `现在是${year}年${month}月${dates}日 ${week[day]}  ${setZero(h)}:${setZero(m)}:${setZero(s)}`;
+        // }
+
+        // console.log(getDate());
+
+
+        //获取时间戳的四种方式
+        // const times=new Date();
+        // console.log(times.valueOf());
+        // console.log(times.getTime());
+        // console.log(+new Date())
+        // console.log(Date.now());
+
+        //倒计时
+        // function DJtime(time) {
+        //     const nowTime = +new Date();
+        //     const inputTime = +new Date(time);
+        //     const paytime = (inputTime - nowTime) / 1000;
+        //     let day = parseInt(paytime / 60 / 60 / 24);
+        //     let h = parseInt(paytime / 60 / 60 % 60);
+        //     let m = parseInt(paytime / 60 % 60);
+        //     let s = parseInt(paytime % 60);
+
+        //     console.log(`${day}天${h}:${m}:${s}`)
+        // }
+        // DJtime("2021-1-3");
+
+        //创建数组的方法
+        // const arr2=[];
+        // const arr=new Array(1,2);
+        // const arr1= Array.of(8);
+        // console.log(arr,arr1);
+
+        //翻转数组
+        // function reverse(arr) {
+        //     const newArr = [];
+        //     if (Array.isArray(arr)) {
+        //         for (var i = arr.length - 1; i >= 0; i--) {
+        //             newArr[newArr.length] = arr[i];
+        //         }
+        //         return newArr;
+        //     }else{
+        //         return "这不是一个数组";
+        //     }
+
+        // }
+        // console.log(reverse([1,2,3,4,5,6]));
+        // console.log(reverse(1,2,3,4,5,6));
+
+        //添加数组
+        // const arr=[1,2];
+        // let res=arr.push(5);        //在数组尾部追加数组元素,返回追加元素后的数组长度
+        // console.log(arr,res);
+
+        // arr.unshift(88);    //在数组头部追加数组元素
+        // console.log(arr);
+
+        // let res2=arr.pop();        //删除数组最后一个元素,返回被删除的值
+        // console.log(arr);
+        // console.log(res2);
+
+        // let res3=arr.shift();
+        // console.log(arr);           //删除数组第一个元素,返回被删除的值
+        // console.log(res3);
+
+
+        //筛选数组元素 
+        // const arr=[1520,1200,800,421,633,1236];
+        // const newArr=[];
+        // for(let i=0;i<arr.length;i++){
+        //     if(arr[i]<1200){
+        //         newArr.push(arr[i]);
+        //     }
+        // }
+        // console.log(newArr);
+
+        //filter 修改数组，不改变原数组;
+        // const filtedArr=arr.filter(function(element){
+        //     return element<1200;
+        // });
+        // console.log(filtedArr);
+        // console.log(arr);
+
+
+        //reverse()翻转数组方法
+        // const arr=[1,2,3,4,5,6]
+        // console.log(arr.reverse());
+
+        // const arr1=[5,6,2,1,3,48];
+        // console.log(arr.sort(function(a,b){
+        //     return a-b;
+        // }))
+
+        //数组去重(使用indexof（）)
+        // const arr=['red','black','red','green','black'];
+        // const newArr=[];
+        // for(let i=0;i<arr.length;i++){
+        //     if(newArr.indexOf(arr[i])===-1){
+        //         newArr.push(arr[i]);
+        //     }
+        // }
+        // console.log(newArr);
+
+        //数组去重(使用includes(),如果找的到这返回true，找不到则返回false)
+        // const arr=['red','black','red','green','black'];
+        // const newArr=[];
+        // for(let i=0;i<arr.length;i++){
+        //     if(!newArr.includes(arr[i])){
+        //         newArr.push(arr[i]);
+        //     }
+        // }
+        // console.log(newArr);
+
+
+        //  数组去重(利用对象里的属性唯一性去做,然后利用Object.keys()转化为数组)
+        // const arr=['red','black','red','green','black'];
+        // const obj={};
+        // for(let i=0;i<arr.length;i++){
+        //     obj[arr[i]]=arr[i];
+        // }
+        // let res=Object.keys(obj);
+        // console.log(res);
+
+        //转化字符串;
+        // const arr=['red','black','red','green','black'];
+        // console.log(arr.toString());
+        // console.log(arr.join("$"));
+
+        //基本包装类型
+        // let str='abc';
+        // let temp=new String(str);  // 1. 生成临时变量，把简单类型包装为复杂数据类型
+        // str=temp;
+        // temp=null;
+        // console.log(str.indexOf('c'));
+
+        // let str="ssdjfidhshfdha";
+        // console.log(str.indexOf("j"));   //找到j第一次出现的下标(从前面开始)
+        // console.log(str.includes("s"));  //查找s是否在str里出现，如果有这返回true，没有则返回false
+        // console.log(str.lastIndexOf("f"));  //找到j第一次出现的下标(从后面开始)
+
+        //输出某个字符出现的次数
+        // let str="ssdjfidhshfdha";
+        // let index=str.indexOf("h");
+        // let i=0;
+        // while(index!==-1){
+        //     console.log(index);
+        //     i++;
+        //     index=str.indexOf("h",index+1);
+        // }
+        // console.log(`h出现的次数:${i}`);
+
+        //输出某个数组元素出现的次数
+        // const arr=["red","yellow","black","red","skyblue","red"];
+        // let index=arr.indexOf("red");
+        // let num=0;
+        // while(index!==-1){
+        //     console.log(index);
+        //     num++;
+        //     index=arr.indexOf("red",index+1);
+        // }
+        // console.log(num);
+
+
+        // let str="ssdjfidhshfdha";
+        // console.log(str.charCodeAt(3));  //arCodeAt方法返回的是指定位置上字符对应的ASCII码
+        // console.log(str.charAt(3));      //charAt() 方法从一个字符串中返回指定的字符。
+        // console.log(str[3]);
+
+        //ES6 模板字符串(Template String)是增强版的字符串，用反引号(`)标识，它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。
+        // const str = "ssdjfidhshfdhad";
+        // const obj = {};
+        // for (let i = 0; i < str.length; i++) {
+        //     let chars = str.charAt(i);
+        //     if (obj[chars]) {
+        //         obj[chars]++;
+        //     } else {
+        //         obj[chars] = 1;
+        //     }
+        // }
+        // let max=0;
+        // let str1="";
+        // for(let k in obj){
+        //     if(obj[k]>max){
+        //         max=obj[k];
+        //         str1=k;
+        //     }
+        // }
+        // console.log(`出现的次数最多的是${str1}`);
+        // console.log(max);
+
+
+        // var str2 = "ssdjfidhshfdhhad";
+        // var obj1 = {};
+        // for (var i = 0; i < str2.length; i++) {
+        //     var chars = str2.charAt(i);
+        //     if (obj1[chars]) {//chars 是字符串的每个字符
+        //         obj1[chars]++;//obj1[chars]得到的是属性值
+        //     } else {
+        //         obj1[chars] = 1;
+        //     }
+        // }
+        // console.log(obj1);
+        // console.log(obj1[chars]);
+        // console.log(chars);
+
+        //字符串拼接,返回拼接后的字符串,不会影响元字符串
+            // var str = "ssdjfidhshfdhhad";
+            // const newstr=str.concat("hello world");
+            // console.log(newstr);
+            // console.log(str);
+
+         //返回截取的子串，不改变原值
+            // const sub=str.substr(2,5);  //截取从下标为2的元素开始截取后面五个。
+            // console.log(sub);
+            // console.log(str);
+
+        //字符替换
+            // const str="hello,world!";
+            // const replaceStr=str.replace("o","a");
+            // console.log(replaceStr);
+            // console.log(str);
+
+        //把字符串变成数组
+            // const splitedStr=str.split(",");  //上面的字符串用的什么分隔符，split里就用什么分隔符
+            // console.log(splitedStr);
+            // console.log(str);
+        
+        //简单数据类型(存放在栈里面{能预估大小的})，复杂数据类型(存放在堆里面)
+            // const arr=['a','b']
+            // arr.push("c");
+            // console.log(arr);
+
+            // let num=10;
+            // let num2=num;
+            // num=20;
+            // console.log(num,num2);   //20,10
+
+            // let arr1=[1,3];
+            // let arr2=arr1;
+            // arr2.push(4);
+            // console.log(arr1);
+
+            // function foo(a){
+            //     a++;
+            //     console.log(a);
+            // }
+            // const x=10;
+            // foo(x);
+            // console.log(x);
+
+
+            // const arr=[1,2,5,6,7];
+            // console.log(arr.concat(1,5,'8')); //拼接字符串或数组
+            // console.log(arr);
+            // console.log(arr.slice(1,2));   //截取函数   slice(start ,end);
+            // console.log(arr);
+            // let res=arr.splice(1,3,'a','b','c','d');  //删除元素和删除后添加元素(会改变原数组)
+            // console.log(res);
+            // console.log(arr);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //<---------------------------------------随机数Math.random()----------------------------------------->
+
+        //随机生成小数
+        // console.log(Math.random())     //如若random里面不加参数，会随机生成小数，有几率生成0;生成区间在[0,1);
+
+        //随机生成一个两个数之间的整数；
+        // function getRandomInt(min,max){
+        //     min=Math.ceil(min);
+        //     max=Math.floor(max);
+        //     return Math.floor(Math.random()*(max-min)+min);
+        // }
+        // alert(getRandomInt(1,5));
+
+        //得到一个两数之间随机整数,并且包括两数在内;
+        // function getRandomIntIn(min,max){
+        //         min=Math.ceil(min);
+        //         max=Math.floor(max);
+        //         return Math.floor(Math.random()*(max-min+1)+min);
+        //     }
+        //     alert(getRandomIntIn(1,5));
+
+        //随机点名
+        // let arr=["邱子豪","吴琦","欧阳梓铭","刘沐海","张家良","刘蘭富"];
+        // alert(arr[parseInt(Math.random()*6)]);
+
+        //猜数字游戏(1~10)
+        // let n =parseInt(Math.random() * 11);
+        // console.log(n);
+        // while (true) {         
+        //     let num = parseInt(prompt("亲输入一个数字！"))
+        //     if (num > n) {
+        //         alert("你猜大了！");
+        //     } else if (num < n) {
+        //         alert("你猜小了！");
+        //     }else{
+        //         alert("恭喜你猜对了!!!!");
+        //         break;
+        //     }
+        // }
+
+
+
+        //date日期对象
+        // const time=new Date();
+        // console.log(time);   //获取当前时间日期;
+        // console.log(time.getFullYear());   //返回当前年份；
+        // console.log(time.getMonth());      //返回当前月份,但是返回的月份会比实际月份小一个月;
+        // console.log(time.getDate());       //返回的是几号;
+        // console.log(time.getDay());        //返回星期几，注意周一返回的是1，周六返回的6，周日返回的是0；
+
+        // const date=new Date();
+        // let year=date.getFullYear();
+        // let month=date.getMonth()+1;
+        // let dates=date.getDay();
+        // let arr=["星期日","星期一","星期二","星期日三","星期四","星期五","星期六"];
+        // alert(`今天是${year}年,${month}月${dates}号,${arr[date.getDay()]}`);
+
+        // const time=new Date();
+        // console.log(time.getHours());
+        // console.log(time.getMinutes());
+        // console.log(time.getSeconds());
+
+        // let a={
+        //     b:3,
+        //     d:4
+        // }
+        // alert(a["b"]);
+
+        // function getTime() {
+        //     const time = new Date();
+        //     let h = time.getHours();
+        //     h = h < 10 ? '0' + h : h;
+        //     let m = time.getMinutes();
+        //     m = m < 10 ? '0' + m : m;
+        //     let s = time.getSeconds();
+        //     s = s < 10 ? '0' + s : s;
+        //     return h+':'+m+':'+s;
+        // }
+        // alert(getTime());
+
+        // let date = new Date();
+        // console.log(date.valueOf()); //就是我们现在时间距离1970.1.1总的毫秒数
+        // console.log(date.getTime());
+        // //简单的写法（最常用的写法）
+        // let date1 = +new Date();
+        // console.log(date1);
+        // //h5 新增的获取总的毫秒数
+        // console.log(Date.now());
+
+        //倒计时
+        // function countDown(time) {
+        //     const nowTime = +new Date();
+        //     const inputTime = +new Date(time);
+        //     let times = (inputTime - nowTime) / 1000;
+        //     let d = parseInt(times / 60 / 60 / 24);
+        //     let h = parseInt(times / 60 / 60 % 60);
+        //     h = h < 10 ? '0' + h : h;
+        //     let m = parseInt(times / 60 % 60);
+        //     m = m < 10 ? '0' + m : m;
+        //     let s = parseInt(times % 60);
+        //     s = s < 10 ? '0' + s : s;
+
+        //     document.getElementById("clock").value = ('剩余' + d + '天' + h + '小时' + m + '分' + s + '秒');
+        // }
+        // setInterval("countDown('2021-1-3 00:00:00')", 1000);
+
+
+        //时钟
+        // var int = self.setInterval("clock()", 1000);
+        // function clock() {
+        //     var d = new Date();
+        //     var t = d.toLocaleTimeString();
+        //     document.getElementById("clock").value = t;
+        // }
+
+        //获取数组元素索引值
+        // const arr=['red','black','小胖','yellow','green'];
+        // console.log(arr.indexOf("yellow"));   //从数组头部开始  indexof()如果找到了“yellow"就返回它的索引值，没找到就返回-1;
+        // console.log(arr.lastIndexOf("black")); //从数组尾部开始,(不管从前面开始还是从后面开始数组的索引值都不会发生改变)
+
+        //数组去重(自己想的)
+        // const arr = ['a', 'b', 'c', 'd', 'a', 'c', 'a', 'b'];
+        // const newArr = [];
+        // for (let i = 0; i < arr.length; i++) {
+        //     if (newArr.indexOf(arr[i]) === -1){         //结合indexof()方法来判断，如果indexof()返回值为-1，说明newArr数组里没有arr[i]所添加的元素，为1则有或者说是找到了就说明是重复的
+        //         newArr.push(arr[i]);
+        //     }
+        // }
+        // console.log(newArr);
+
+        //数组去重(pink)
+        // function unique(arr){
+        //     const newArr=[];
+        //     for(let i=0;i<arr.length;i++){
+        //         if(newArr.indexOf(arr[i])==-1){
+        //             newArr.push(arr[i]);
+        //         }
+        //     }
+        //     return newArr;
+        // }
+        // let a=[1,5,3,16,8,18,5,4,12,13,5,9];
+        // console.log(unique(a).sort(function(a,b){       //去重之后进行排序调用sort()方法;
+        //     return a-b;
+        // }));
+
+
+        //数组转换成字符串
+        // //1.toString()将我们的数组转换为字符串
+        // const arr=[1,2,3];
+        // console.log(arr.toString());  //1,2,3
+        // //2.join(分隔符)
+        // const arr1=['pink','skyblue','black'];
+        // console.log(arr1.join("-"));  //pink-skyblue-black
+
+        //数组截取slice();
+        // const arr=['pink','black','yellow','blue','ssr'];
+        // console.log(arr.slice(2,4));
+        // console.log(arr.splice(1,2));
+
+        //求某个字符出现的位置以及次数
+        // let st='snvhsjndbvfuagfudbnfusgndysnf';
+        // let index=st.indexOf("n");
+        // let i=0;
+        // while(index!=-1){
+        //     i++;
+        //     console.log(index);
+        //     index=st.indexOf("n",index+1);
+        // }
+        // console.log(`o的出现次数：${i}`);
+
+        //求"red"出现的位置以及次数
+        // const arr=['red','blue','red','green','pink','red'];
+        // let index=arr.indexOf("red");
+        // let i=0;
+        // while(index!=-1){
+        //     console.log(index);
+        //     index=arr.indexOf("red",index+1);
+        //     i++;
+        // }
+        // console.log(`'red'出现次数${i}`);
+
+
+
+        // let str = 'abcoefoxyozzopp';
+        // const o = {};
+        // for (let i = 0; i < str.length; i++) {
+        //     let chars = str.charAt(i);  //chars 是 字符串的每一个字符
+        //     if (o[chars]) {     //o[chars]得到的是属性值
+        //         o[chars]++;
+        //     } else {
+        //         o[chars] = 1;
+        //     }
+        // }
+        // console.log(o);
+        // //2.遍历对象
+        // let max=0;
+        // let ch="";
+        // for(let k in o){
+        //     //k得到的是属性名
+        //     //o[k]的得到的是属性值
+        //     if(o[k]>max){
+        //         max=o[k];
+        //         ch=k;
+        //     }
+        // }
+        // console.log(max);
+        // console.log('最多的字符串是'+ch);
+    </script>
+    <input type="text" id="clock" />
+</body>
+
+</html>

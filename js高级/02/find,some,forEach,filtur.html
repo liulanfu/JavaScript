@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const data = [{
+            name: '吕布',
+            sex: 'man',
+            attact: 'shirt'
+        }, {
+            name: '大乔',
+            sex: 'women',
+            attact: 'length'
+        }, {
+            name: '诸葛亮',
+            sex: 'man',
+            attact: 'long'
+        }, {
+            name: '凯',
+            sex: 'man',
+            attact: 'shirt'
+        }, {
+            name: '小乔',
+            sex: 'women',
+            attact: 'shirt'
+        }, {
+            name: '烧饼',
+            sex: 'man',
+            attact: 'shirt,fast'
+        }];
+
+        //forEach()
+        data.forEach(function (item) {
+            console.log(item);     
+        });
+
+        //some()
+        const flag = data.some(function (item) {
+            return item.name == '大乔';   //返回的是布尔值
+        });
+        console.log(flag);
+
+        //find()
+        const obj = data.find(function (item) {
+            return item.name=='烧饼';     //返回的是数组元素
+        }) 
+        console.log(obj);
+
+        const newarr = data.filter(function (item) {
+            return item.sex=='women';     //返回一个新的数组
+        }) 
+        console.log(newarr);
+
+
+
+    </script>
+</body>
+
+</html>

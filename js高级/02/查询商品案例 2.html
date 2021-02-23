@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box {
+        padding: 10px;
+        width: 800px;
+        height: 500px;
+        background-color: pink;
+        margin: 50px auto;
+        text-align: center;
+    }
+
+    input {
+        width: 100px;
+    }
+
+    table {
+        margin: 50px auto;
+        width: 500px;
+        border-collapse: collapse;
+    }
+</style>
+
+<body>
+    <div class="box">
+        <span>查询价格：</span>
+        <input type="text" class="min-price"> -
+        <input type="text" class="max-price">
+        <button class="search">搜索</button>
+        <span>按照商品名称查询：</span>
+        <input type="text" class="prname">
+        <button class="find">查询</button>
+
+        <table border=1>
+            <thead>
+                <tr>
+                    <th>id</th>
+                    <th>产品名称</th>
+                    <th>价格</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        const data = [{
+            id: 1,
+            pname: '小米',
+            price: 3999
+        }, {
+            id: 2,
+            pname: 'oppo',
+            price: 999
+        }, {
+            id: 3,
+            pname: '荣耀',
+            price: 1299
+        }, {
+            id: 4,
+            pname: '华为',
+            price: 1999
+        }, {
+            id: 5,
+            pname: '小米',
+            price: 4999
+        }, {
+            id: 6,
+            pname: 'oppo',
+            price: 599
+        }, {
+            id: 7,
+            pname: '荣耀',
+            price: 2299
+        }, {
+            id: 8,
+            pname: '华为',
+            price: 2999
+        },];
+
+        const tbody = document.querySelector('tbody');
+        const search = document.querySelector('.search');
+        const find = document.querySelector('.find');
+        const min = document.querySelector('.min-price');
+        const max = document.querySelector('.max-price');
+        const prname = document.querySelector('.prname');
+        getDate(data);
+        function getDate(mydata) {
+            tbody.innerHTML = '';
+            mydata.forEach(function (item) {
+                let trs = `
+                    <tr>
+                        <td>${item.id}</td>
+                        <td>${item.pname}</td>
+                        <td>${item.price}</td>
+                    </tr>
+                `;
+                tbody.insertAdjacentHTML('beforeend', trs);
+            });
+        };
+
+        search.addEventListener('click', function () {
+            const newdata = data.filter(function (item) {
+                if(min.value.trim()||max.value.trim()) {
+                    return item.price >= min.value && item.price <= max.value;
+                }else{
+                    return true;
+                }
+            });
+            getDate(newdata);
+        });
+
+        find.addEventListener('click', function () {
+            // const newdata = data.filter(function (item) {
+            //     if(prname.value){
+            //         return item.pname == prname.value;
+            //     }else{
+            //         return true;
+            //     }
+            // });
+            // getDate(newdata);
+
+            const newarr=data.some(function (item){
+                if(item.pname == prname.value.trim()){
+                    getDate([item]);
+                    return true;
+                }
+            })
+
+            //唯一的值时
+            const newdata=data.find(function (item){
+                return item.pname == prname.value.trim();   //返回数组项
+            })
+            getDate([newdata]);    //因为newdata是对象，所以需要转化为数组；
+        })
+
+    </script>
+</body>
+
+</html>

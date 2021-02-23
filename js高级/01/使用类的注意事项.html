@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>点击</button>
+    <script>
+        let that;
+        class Father{
+            constructor(umane){
+                that=this;
+                this.umane=umane;
+                this.btn=document.querySelector('button');
+                this.btn.onclick=this.sing;
+            }
+            sing(){
+                console.log(that.umane);    //这里用that是因为这里的this指向的是btn,因为btn触发了sing()方法，btn里没有uname，所以要用that，that指向的是实例化对象
+            }
+        }
+
+        const ldh=new Father('刘德华');
+        ldh.sing();
+    </script>
+</body>
+</html>

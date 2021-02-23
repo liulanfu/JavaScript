@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>第四天</title>
+</head>
+<script>
+    // var arr=["小米","huawei",1,"true",false,undefined];
+    // alert(arr[0]);
+    // alert(arr[1]);
+    // alert(arr[2]);
+    // alert(arr[3]);
+    // alert(arr[4]);
+    // alert(arr[5]);
+    // alert(arr[6]);
+
+    // for(var i=0;i<arr.length;i++){
+    //     console.log(arr[i]);
+    // }
+
+    // var arr=[1,2,3,4,5,6,4,5,6,8,9,9]
+    // var sum=0;
+    // var average=0;
+    // for(var i=0;i<arr.length;i++){
+    //     sum+=arr[i];
+    // }
+    // average=sum/arr.length;
+    // alert(sum+"---------"+average);
+
+    // var arr=[12,54,68,42,152,61,99];
+    // var max=arr[0];
+    // for(var i=0;i<arr.length;i++){
+    //     if(max<arr[i]){
+    //         max=arr[i];
+    //     }
+    // }
+    // alert(max);
+
+    // var arr=["小米","huawei",1,"true",false,undefined];
+    // console.log(arr[7]);
+    // arr[7]="少冰";
+    // console.log(arr[7]);
+
+    // var arr=[];
+    // for(var i=0;i<10;i++){
+    //     arr[i]=i+1;
+    // }
+    // alert(arr);
+
+    // var arr = [12, 9, 5, 36, 0, 54, 12, 11, 0, 23, 2, 10, 0, 8, 7, 9];
+    // var newArr = [];
+    // for (var i = 0; i < arr.length; i++) {
+    //     if (arr[i] % 2 == 0) {
+    //         newArr[newArr.length] = arr[i];
+    //     }
+    // }
+    // var newArr1 = [];
+    // var j = 0;
+    // for (var i = 0; i < arr.length; i++) {
+    //     if (arr[i] >= 10) {
+    //         newArr1[j] = arr[i];
+    //         j++
+    //     }
+    // }
+    // var zero = [];
+    // for (var i = 0; i < arr.length; i++) {
+    //     if (arr[i] != 0) {
+    //         zero[zero.length] = arr[i];
+    //     }
+    // }
+    // alert(newArr);
+    // alert(newArr1);
+    // alert(zero);
+
+    // var arr=["blue","yellow","red","purple","skyblue","orange"];
+    // var newArr=[];
+    // for(var i=arr.length-1;i>=0;i--){
+    //     newArr[newArr.length]=arr[i];
+    // }
+    // alert(newArr);
+
+
+    //查重
+    // var arr=[12,2,5,6,2,8,7,6];
+    // var newArr=[];
+    // for(var i=0;i<arr.length;i++){
+    //     if(newArr.indexOf(arr[i])==-1){
+    //         newArr[newArr.length]=arr[i];
+    //     }
+    // }
+    // console.log(newArr);
+
+    // var arr = [5, 4, 3, 4, 5, 6, 8];
+    // for (var i = 0; i < arr.length - 1; i++) {
+    //     for (var j = 0; j < arr.length - i - 1; j++) {
+    //         if (arr[j] > arr[j + 1]) {
+    //             var temp = arr[j];
+    //             arr[j] = arr[j + 1];
+    //             arr[j + 1] = temp;
+    //         }
+    //     }
+    // }
+    // alert(arr);
+
+    // function halo(name){
+    //     console.log(name);
+    // }
+    // halo("xiaoming");
+
+    // function jis(){
+    //     var sum=0;
+    //     for(var i=1;i<=100;i++){
+    //         sum+=i;
+    //     }
+    //     return sum;
+    // }
+    // console.log(jis());
+
+    // function jis(start,end){ 
+    //     var mun=0;
+    //     for(var i=start;i<=end;i++){
+    //         mun+=i;
+    //     }
+    //     return mun;  //return执行往后后面代码不执行(即如果在函数里面return下面再需要些什么代码就无效了);
+    // }
+    // alert(jis(1,100));
+
+    // function max(num1,num2){
+    //     if(num1>num2){
+    //         return num1;
+    //     }
+    //     return num2;
+    // }
+    // alert(max(100,70));
+
+    // function maxarr(arr){
+    //     var max=arr[0];
+    //     for(var i=1;i<arr.length;i++){
+    //         if(max<arr[i]){
+    //             max=arr[i]
+    //         }
+    //     }
+    //     return max;
+    // }
+    // var result=maxarr([1,2,5,44,55,77,11,100])
+    // alert(result);
+
+    // function getMaxNum(a,b){
+    //     return [a+b,a-b,a*b,a/b]
+    // }
+    // alert(getMaxNum(1,2));
+
+    //数组的获取
+    // var arr=['小胖','大胖','吴琦','家良','欧阳','老刘','416'];
+    // for(var i=0;i<arr.length;i++){
+    //     console.log(arr[i]+"\n");
+    // }
+
+    // 计算数组里的值得 和 ,跟平均数;
+    // var arr=[4,5,6,9,9,8,7,5,5,7];
+    // var count=0;
+    // var aver=0;
+    // for(var i=0;i<arr.length;i++){
+    //     count+=arr[i];
+    //  }
+    //  aver=count/arr.length;
+    //  alert("总数为:"+count+"平均数为:"+aver);
+
+    // 最大值
+    // var arr=[15,7,9,3,35,69,84,11,30,66,22,89];
+    // var max=arr[0];
+    // for(var i=1;i<arr.length;i++){
+    //     if(arr[i]>max){
+    //         max=arr[i];
+    //     }
+    // }
+    // alert("最大值为："+max);   
+
+    //获取数组最大值的函数
+    // function getArrMax(arr){
+    //     var max=arr[0];
+    //     for(var i=1;i<arr.length;i++){
+    //         if(arr[i]>max){
+    //             max=arr[i];
+    //         }
+    //     }
+    //     return max;
+    // }
+    // alert(getArrMax([4,5,61,1,2,3,8,9,44]));
+
+
+    // 最小值
+    // var arr=[15,7,9,3,35,69,84,11,30,66,22,89];
+    // var min=arr[0];
+    // for(var i=1;i<arr.length;i++){
+    //     if(min>arr[i]){
+    //         min=arr[i];
+    //     }
+    // }
+    // alert("最小值为："+min);
+
+    //数组元素的链接
+    // var arr=["小胖","大胖","欧阳","家良","吴琦","老刘"];
+    // var str="";
+    // var pge="*";
+    // for(var i=0;i<arr.length;i++){
+    //     str+=arr[i]+pge;
+    // }
+    // alert(str);
+
+    // 筛选数组方法一(筛选第一个数组里的值大于10，然后把大于10的值存到另一个空数组里面)
+    // var arr=[5,10,20,3,5,64,85,65,44,88,4,6];
+    // var Newarr=[];
+    // var j=0;
+    // for(var i=0;i<arr.length;i++){
+    //     if(arr[i]>=10){
+    //         Newarr[j]=arr[i];
+    //         // console.log(Newarr[j]);
+    //         j++;
+    //     }
+    // }
+    // console.log(Newarr);
+
+    //筛选数组方法二(筛选第一个数组里的值大于10，然后把大于10的值存到另一个空数组里面)
+    // var arr=[5,10,20,3,5,64,85,65,44,88,4,6];
+    // var Newarr=[];
+    // for(var i=0;i<arr.length;i++){
+    //     if(arr[i]>=10){
+    //         Newarr[Newarr.length]=arr[i];          //数组里的length会自动检查数组的长度，空数组的length的值是从零开始。
+    //         // console.log(Newarr.length);
+    //         // console.log(Newarr[Newarr.length -1]);
+    //     }
+    // }
+    // console.log(Newarr);
+
+    //删除原数组指定的元素,然后生成新的数组
+    // var arr=[5,10,20,3,5,64,85,65,44,88,4,5];
+    // var Newarr=[]; 
+    // for(var i=0;i<arr.length;i++){
+    //     if(arr[i]!=5){
+    //         Newarr[Newarr.length]=arr[i];
+    //     }
+    // }
+    // console.log(Newarr);
+
+    //翻转数组(把数组的顺序倒过来)
+    // var name1=['老刘','大胖','欧阳','家良','吴琦','小胖'];
+    // var newname=[];
+    // // 第一种
+    // // for(var i=0;i<name1.length;i++){
+    // //     newname[newname.length]=name1[name1.length-i-1];
+    // // }
+    // // 第二种
+    // // for(var i=name1.length-1;i>=0;i--){
+    // //     newname[newname.length]=name1[i];
+    // // }
+    // console.log(newname);
+
+    // 冒泡排序一
+    //     var arr=[5,4,3,2,1,5,9,8,7];
+    //     for(var i=0;i<arr.length-1;i++){
+    //         for(var j=0;j<arr.length-i-1;j++){
+    //             if(arr[j]>arr[j+1]){
+    //                 var temp=arr[j];
+    //                 arr[j]=arr[j+1];
+    //                 arr[j+1]=temp;
+    //             }
+    //         }
+    //     }
+    //    console.log(arr);
+
+    // 冒泡排序二
+    // var num=prompt("你想对多少个数值排序");
+    // var arr=[];
+    // for(var x=0;x<parseInt(num);x++){
+    //     var m=prompt("亲输入第"+(x+1)+"个值");
+    //     arr[x]= parseInt(m);
+    // }
+    // for(var i=0;i<arr.length-1;i++){
+    //     for(var j=0;j<arr.length-i-1;j++){
+    //         if(arr[j]>arr[j+1]){
+    //             var temp=arr[j];
+    //             arr[j]=arr[j+1];
+    //             arr[j+1]=temp;
+    //         }
+    //     }
+    // }
+    // alert(arr);
+
+    // 数组从小到大的排列函数
+    //    function rank(arr){
+    //     for(var i=0;i<arr.length-1;i++){
+    //             for(var j=0;j<arr.length-i-1;j++){
+    //                 if(arr[j]>arr[j+1]){
+    //                     var temp=arr[j];
+    //                     arr[j]=arr[j+1];
+    //                     arr[j+1]=temp;
+    //                 }
+    //             }
+    //         }
+    //       return arr;
+    //    }
+    //    alert(rank([5,4,2,8,4,9,6,21,4964,43,1]));
+
+    // <-----------形参不传值默认是undefined,任何一个数字加上undefined结果都是NaN;---------->
+    // 比较最大值
+    // function getMax(num1,num2){
+    //     if(num1>num2){
+    //         return num1;
+    //     }else{
+    //         return num2;
+    //     }
+    // }
+    // alert(getMax(12,6));
+
+    // function count() {
+    //     var num1 = prompt("请输入第一个数");
+    //     var sign = prompt("亲输入计算符号");
+    //     var num2 = prompt("请输入第二个数");
+    //     var sum = 0;
+    //     while (sign != '+' && sign != '-' && sign != '*' && sign != '/') {
+    //         alert("亲输入正确的符号");
+    //         num1 = prompt("请输入第一个数");
+    //         sign = prompt("亲输入计算符号");
+    //         num2 = prompt("请输入第二个数");
+    //     }
+    //     switch (sign) {
+    //         case '+':
+    //             sum = parseInt(num1) + parseInt(num2);
+    //             alert(`${num1}+${num2}=${sum}`)
+    //             break;
+    //         case '-':
+    //             sum = parseInt(num1) - parseInt(num2);
+    //             alert(`${num1}-${num2}=${sum}`)
+    //             break;
+    //         case '*':
+    //             sum = parseInt(num1) * parseInt(num2);
+    //             alert(`${num1}*${num2}=${sum}`)
+    //             break;
+    //         case '/':
+    //             sum = parseInt(num1) / parseInt(num2);
+    //             alert(`${num1}/${num2}=${sum}`)
+    //             break;
+    //     }
+
+    // }
+
+    // count();
+
+
+    // <-------------------------------------------练习------------------------------------------------------------->
+
+    // var num1=prompt("请输入第一个数！");
+    // var sign=prompt("亲输入+或-或*或/");
+    // var num2=prompt("请输入第二个数！");
+    // count(num1,sign,num2);
+    // function count(num1,sign,num2){
+    //     var sum=0;
+    //     while (sign != '+' && sign != '-' && sign != '*' && sign != '/') {
+    //         alert("亲输入正确的符号");
+    //         num1 = prompt("请输入第一个数");
+    //         sign = prompt("亲输入计算符号");
+    //         num2 = prompt("请输入第二个数");
+    //     }
+    //     switch (sign) {
+    //         case '+':
+    //             sum = parseInt(num1) + parseInt(num2);
+    //             alert(`${num1}+${num2}=${sum}`)
+    //             break;
+    //         case '-':
+    //             sum = parseInt(num1) - parseInt(num2);
+    //             alert(`${num1}-${num2}=${sum}`)
+    //             break;
+    //         case '*':
+    //             sum = parseInt(num1) * parseInt(num2);
+    //             alert(`${num1}*${num2}=${sum}`)
+    //             break;
+    //         case '/':
+    //             sum = parseInt(num1) / parseInt(num2);
+    //             alert(`${num1}/${num2}=${sum}`)
+    //             break;
+    //     }
+    // }   
+
+
+    // var num1=parseInt(prompt("亲输入第一个值！"))
+    // var num2=parseInt(prompt("亲输入第二个值！"))
+    // alert(maxNum(num1,num2));
+    // function maxNum(num1,num2){
+    //     if(num1>num2){
+    //         return num1;
+
+    //     }
+    //     return num2;
+    // }
+
+    // var num1=parseInt(prompt("亲输入第一个值！"))
+    // var num2=parseInt(prompt("亲输入第二个值！"))
+    // var num3=parseInt(prompt("亲输入第三个值！"))
+    // alert(maxNum(num1,num2,num3));
+    // function maxNum(num1,num2,num3){
+    //     if(num1>num2 && num1>num3){
+    //         return num1;
+    //     }else if(num2>num3){
+    //         return num2;
+    //     }
+    //     return num3;
+    // }
+
+    // var num1 = parseInt(prompt("亲输入一个数！"))
+    // judge(num1);
+    // function judge(num) {
+    //     var all = [];
+    //     var j = 1;
+    //     if (num / num == 1) {
+    //         all[0] = num;
+    //     }
+    //     for (var i = 0; i < num; i++) {
+    //         if (num % i == 0) {
+    //             all[j] = i;
+    //             j++;
+    //         }
+    //     }
+    //     if ((all[0] == num && all[1] == 1 && all.length == 2) || num == 1) {
+    //         alert(num + "是素数");
+    //     } else {
+    //         alert(num + "不是素数");
+    //     }
+    // }
+
+    // judge1(num1);
+    // function judge1(num) {
+    //     for (var i = 2; i <=num ; i++) {
+    //         if (num % i == 0) {
+    //             break;
+    //         }
+    //     }
+    //     if (i > num - 1) {
+    //         alert(num + "是素数");
+    //     } else {
+    //         alert(num + "不是素数");
+    //     }
+
+    // }
+
+</script>
+
+<body>
+
+</body>
+
+</html>

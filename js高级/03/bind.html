@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button>按钮</button>
+    <script>
+        const o = {
+            name: 'pink'
+        };
+
+        function fn(a, b) {
+            console.log(this);
+            console.log(a + b);
+        }
+
+        let f=fn.bind(o,1,2);   //改变函数的this指向o
+        f();
+
+
+        const btn=document.querySelector('button');
+        btn.addEventListener('click',function(){
+            this.disabled=true;
+            setTimeout(function(){ 
+                this.disabled=false;    //因为bind让settimeout里面的this指向的btn所以这里可以使用this.disable使btn可以被点击
+            }.bind(this),2000);     //用bind()方法让settimeout里面的this指向btn;
+        })
+
+    </script>
+
+</body>
+
+</html>
